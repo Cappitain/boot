@@ -1,0 +1,159 @@
+.navbar {
+    width: auto;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f0f8ff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar-brand {
+    width: 293.438;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .logo {
+    margin-top: 0px;
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+  }
+  
+  .navbar-brand span {
+  
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #006400;
+  }
+  
+  .navbar-links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .zone-link {
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .zone-a {
+    color: #ff0000;
+  }
+  
+  .zone-b {
+    color: #ffd700;
+  }
+  
+  .zone-c {
+    color: #1e90ff;
+  }
+  
+  .navbar-actions {
+    display: flex;
+    gap: 10px;
+  }
+  a {
+    color: #006400;
+    text-decoration: none;
+  }
+/* กำหนดสีที่ต้องการใช้ */
+:root {
+    --primary-color: #007bff; /* สีหลัก เช่น สีของปุ่ม */
+    --secondary-color: #f8f9fa; /* สีพื้นหลัง */
+    --text-color: #333; /* สีตัวอักษร */
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .container {
+    margin-bottom: 4.5rem;
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    //text-align: center;
+    width: 800px;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #6495ED;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  input[type="radio"] {
+    /* กำหนดขนาดและรูปแบบของ radio button */
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+  }
+  input[type="radio"]:checked::after {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #007bff; /* สีที่ต้องการ */
+    position: absolute;
+    top: 2px;
+    left: 2px;
+  }
+  .options {
+    display: flex;  
+    justify-content: space-between ; 
+    margin: 0 100px  5px 100px ;
+  }
+
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--text-color);
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  .regis-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    justify-content: center;
+    display: flex;
+  }
+  
+  button:hover {
+    background-color: #0069d9;
+  }
+  .regis{
+    display: flex;
+    justify-content: center;
+  }
