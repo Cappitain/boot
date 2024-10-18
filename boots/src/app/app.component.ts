@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+/*import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Router } from '@angular/router';
 
@@ -13,4 +13,52 @@ export class AppComponent {
   title(title: any) {
     throw new Error('Method not implemented.');
   }
+}
+*/
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { Router } from '@angular/router';
+import { HttpClient,HttpClientModule } from '@angular/common/http';
+import { lastValueFrom } from 'rxjs';
+import { MainComponent } from './page/main/main.component';
+
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [RouterOutlet, MainComponent, HttpClientModule],
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
+})
+
+export class AppComponent {
+  title = 'project';
+
+  constructor(private router: Router, private http:HttpClient) {
+     this.getZone();
+     console.log('strat');
+      let url = 'http://localhost/webapi/zone';
+      let obs = this.http.get(url).subscribe((data:any) => {
+       console.log(data[0]);
+       console.log('complete');
+      });
+      console.log('continue');
+      setTimeout(() => {
+       obs.unsubscribe();
+       console.log("unsubscribe");
+      }, 2500);
+  }
+
+   async getZone(){
+     console.log('strat');
+     let url = 'http://localhost/webapi/zone';
+     let data:any = await lastValueFrom(this.http.get(url));
+     console.log(data[0]);
+     console.log('complete');
+
+     console.log('continue');
+   }
+
+
+
 }
