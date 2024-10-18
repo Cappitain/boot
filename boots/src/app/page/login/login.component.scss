@@ -7,12 +7,13 @@
   }
   
   .login-box {
+    margin-bottom: 15rem;
     background-color: white;
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 400px;
+    width: 500px;
   }
   
   .logo {
@@ -64,13 +65,94 @@
     margin-top: 15px;
     font-size: 14px;
   }
-  
   .additional-options a {
     color: #6495ED;
     text-decoration: none;
-  }
-  
+  }  
   .additional-options a:hover {
     text-decoration: underline;
   }
-  
+/* Navbar Styles */
+.navbar {
+  width: auto;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f0f8ff;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  width: 293.438;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  margin-top: 20px;
+  width: 50px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.navbar-brand span {
+
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #006400;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 20px;
+}
+
+.zone-link {
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.zone-a {
+  color: #ff0000;
+}
+
+.zone-b {
+  color: #ffd700;
+}
+
+.zone-c {
+  color: #1e90ff;
+}
+
+.navbar-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.login-button, .signup-button {
+  padding: 8px 16px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-button {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.signup-button {
+  background-color: #ff4500;
+  color: white;
+}
+
+a {
+  color: #006400;
+  text-decoration: none;
+  cursor: pointer;
+}
