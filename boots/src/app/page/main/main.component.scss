@@ -20,8 +20,10 @@
   }
   
   .navbar-brand span {
+    font-family: "Mitr", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     font-size: 1.5rem;
-    font-weight: bold;
     color: #006400;
   }
   
@@ -37,15 +39,31 @@
   }
   
   .zone-a {
-    color: #ff0000;
+    color: #004aad;
+    font-family: "Black Ops One", system-ui;
+    font-weight: 400;
+    font-style: normal;
   }
   
   .zone-b {
-    color: #ffd700;
+    color: #ceaa4b;
+    font-family: "Black Ops One", system-ui;
+    font-weight: 400;
+    font-style: normal;
   }
   
   .zone-c {
-    color: #1e90ff;
+    color: #3aa79c;
+    font-family: "Black Ops One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .zone-d {
+    color: #d52d2e;
+    font-family: "Black Ops One", system-ui;
+    font-weight: 400;
+    font-style: normal;
   }
   
   .navbar-actions {
@@ -54,6 +72,9 @@
   }
   
   .login-button, .signup-button {
+    font-family: "Mitr", sans-serif;
+    font-weight: 300;
+    font-style: normal;
     padding: 8px 16px;
     font-size: 1rem;
     border: none;
@@ -62,6 +83,9 @@
   }
   
   .login-button {
+    font-family: "Mitr", sans-serif;
+    font-weight: 300;
+    font-style: normal;
     background-color: #4CAF50;
     color: white;
   }
@@ -82,5 +106,47 @@
     max-width: 800px;
     border: 2px solid #ccc;
     border-radius: 10px;
+  }
+  
+  .mitr-extralight {
+    font-family: "Mitr", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+  }
+  
+  .mitr-light {
+    font-family: "Mitr", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .mitr-regular {
+    font-family: "Mitr", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .mitr-medium {
+    font-family: "Mitr", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .mitr-semibold {
+    font-family: "Mitr", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  .mitr-bold {
+    font-family: "Mitr", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .black-ops-one-regular {
+    font-family: "Black Ops One", system-ui;
+    font-weight: 400;
+    font-style: normal;
   }
   
