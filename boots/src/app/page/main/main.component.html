@@ -38,14 +38,20 @@
         <a href="#" class="zone-link zone-d">ZONE D</a>
       </div>
       <div class="navbar-actions">
-        <button class="login-button">เข้าสู่ระบบ</button>
-        <button class="signup-button">สมัครสมาชิก</button>
+        <button (click)="goToLogin()" class="login-button">เข้าสู่ระบบ</button>
+        <button (click)="goToRegister()" class="signup-button">สมัครสมาชิก</button>
       </div>
     </nav>
 
     <!-- Map Section -->
     <div class="map-container">
-      <img src="assets/img/ZONE2.png" alt="ZONE A" width="1100" />
+      <img src="assets/img/ZONE2.png" usemap="#image-map" alt="ZONE A" width="1100" />
+      <map name="image-map">
+        <area (click)="goToLogin()" target="" alt="zoneA" title=""  coords="0,0,253,290" shape="rect">
+        <area (click)="goToLogin()" target="" alt="zoneB" title=""  coords="331,14,1234,301" shape="rect">
+        <area (click)="goToLogin()" target="" alt="zoneC" title=""  coords="0,360,501,635" shape="rect">
+        <area (click)="goToLogin()" target="" alt="zoneD" title=""  coords="553,384,1250,680" shape="rect">
+    </map>
     </div>
   </body>
 </html>
