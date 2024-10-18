@@ -39,13 +39,13 @@
     </div>
   </nav>
   <div style="display: flex; flex-direction: row;">
-    <div style="width: 400px;">
+    <div style="width: 550px;">
       <h3>Zone </h3>
       <mat-selection-list #zone [multiple]="false" (selectionChange)="show($event.options[0])">
-        <mat-list-option *ngFor="let zone of zones" [value]="zone" style="width: 400px; height: 160px;">
+        <mat-list-option *ngFor="let zone of zones" [value]="zone" style="width: 550px; height: 160px;">
           <div>
             <img src="{{zone.zonePicture}}" alt="zonePicture" height="150px" width="200px">
-            {{zone.zoneName}}
+            รหัส:{{zone.zoneID}} ชื่อโซน: {{zone.zoneName}} จำนวนบูธที่มี: {{countBoothsInZone(zone)}}
           </div>
         </mat-list-option>
       </mat-selection-list>

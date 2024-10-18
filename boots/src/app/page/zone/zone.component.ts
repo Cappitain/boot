@@ -19,6 +19,7 @@ import { ActivatedRoute } from '@angular/router';
 export class zoneComponent {   
   zones = Array<Zone>(); 
   booths = Array<Booth>();
+  events = Array<Event>();
   selectedZone: Zone | undefined;
   filteredBooths: Booth[] = []; 
 
@@ -32,6 +33,12 @@ export class zoneComponent {
       this.booths = boothCvt.toBooth(JSON.stringify(data));
       console.log(this.booths);
     });
+
+
+
+  }
+  countBoothsInZone(zone: Zone): number {
+    return this.booths.filter(booth => booth.zoneID === zone.zoneID).length;
   }
 
   show(option: MatListOption) {

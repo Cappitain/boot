@@ -17,6 +17,9 @@ export interface Booth {
 
 // Converts JSON strings to/from your types
 export class Convert {
+    static toEvent(arg0: string): Event[] {
+      throw new Error('Method not implemented.');
+    }
     public static toBooth(json: string): Booth[] {
         return JSON.parse(json);
     }
