@@ -19,7 +19,10 @@ export class Main2Component {
   goToRegister() {
     this.router.navigate(['/regis']);
   }
-  goToZone() {
-    this.router.navigate(['/zone']);
+  goToZone2() {
+    this.router.navigate(['/zone2']);
+  }
+  goTomain() {
+    this.router.navigate(['']);
   }
 }
