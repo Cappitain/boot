@@ -21,12 +21,13 @@ import { Router } from '@angular/router';
 import { HttpClient,HttpClientModule } from '@angular/common/http';
 import { lastValueFrom } from 'rxjs';
 import { MainComponent } from './page/main/main.component';
+import { MatDialogModule, MatDialog} from '@angular/material/dialog';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MainComponent, HttpClientModule],
+  imports: [RouterOutlet, MainComponent, HttpClientModule,MatDialogModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })

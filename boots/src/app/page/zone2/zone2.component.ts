@@ -8,11 +8,13 @@ import { Convert as boothCvt, Booth } from '../../model/booth.model';
 import { MatListModule, MatListOption } from '@angular/material/list';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
+import { MatDialogModule, MatDialog} from '@angular/material/dialog';
+import { NewComponent } from '../new/new.component';
 
 @Component({
   selector: 'app-zone',
   standalone: true,
-  imports: [RouterOutlet,MatListModule,CommonModule],
+  imports: [RouterOutlet,MatListModule,CommonModule,MatDialogModule],
   templateUrl: './zone2.component.html',
   styleUrl: './zone2.component.scss'
 })
@@ -23,7 +25,7 @@ export class zone2Component {
   selectedZone: Zone | undefined;
   filteredBooths: Booth[] = []; 
 
-  constructor(private route: ActivatedRoute,private router: Router,private dataService:DataService, private http:HttpClient){
+  constructor(private route: ActivatedRoute,private router: Router,private dataService:DataService, private http:HttpClient, private dialog : MatDialog){
     http.get(dataService.apiEndpoint + "/zone").subscribe((data:any)=>{
       this.zones = zoneCvt.toZone(JSON.stringify(data));
       console.log(this.zones);
@@ -59,5 +61,10 @@ export class zone2Component {
   }
   goTomain2() {
     this.router.navigate(['main2']);
+  }
+  addnew() {
+    this.dialog.open(NewComponent,{
+      minWidth:'300px',
+    });
   }
 }
