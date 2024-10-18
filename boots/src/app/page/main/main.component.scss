@@ -29,11 +29,10 @@
   
   .navbar-links {
     font-family: "Mitr", sans-serif;
-    font-weight: 100;
+    font-weight: 400;
     font-style: normal;
-    color: #000000;
-    display: flex;
-    gap: 20px;
+    font-size: 1.5rem;
+    color: #006400;
   }
   
   .zone-link {
@@ -75,7 +74,7 @@
     gap: 10px;
   }
   
-  .login-button, .signup-button {
+  .login-button, .signup-button, .zone-button {
     font-family: "Mitr", sans-serif;
     font-weight: 300;
     font-style: normal;
@@ -96,6 +95,14 @@
   
   .signup-button {
     background-color: #ff4500;
+    color: white;
+  }
+
+  .zone-button {
+    font-family: "Mitr", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    background-color: #0f8bff;
     color: white;
   }
   

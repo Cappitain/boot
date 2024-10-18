@@ -3,15 +3,13 @@ import { RouterOutlet } from '@angular/router';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-zone',
   standalone: true,
   imports: [RouterOutlet],
-  templateUrl: './main.component.html',
-  styleUrls: ['./main.component.scss']
+  templateUrl: './zone.component.html',
+  styleUrl: './zone.component.scss'
 })
-export class MainComponent { 
-  title = 'boots';
-
+export class zoneComponent {    
   constructor(private router: Router) {}
 
   goToLogin() {
@@ -22,5 +20,8 @@ export class MainComponent {
   }
   goToZone() {
     this.router.navigate(['/zone']);
+  }
+  goTomain() {
+    this.router.navigate(['']);
   }
 }
