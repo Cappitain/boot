@@ -1,4 +1,42 @@
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f0f8ff;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 50px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.navbar-brand span {
+  font-family: "Mitr", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.5rem;
+  color: #006400;
+}
+
+.navbar-links {
+  font-family: "Mitr", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.5rem;
+  color: #006400;
+}
+
 .login-container {
+    font-family: "Mitr", sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -7,6 +45,7 @@
   }
   
   .login-box {
+    font-family: "Mitr", sans-serif;
     margin-bottom: 15rem;
     background-color: white;
     padding: 40px;
@@ -22,6 +61,7 @@
   }
   
   h2 {
+    font-family: "Mitr", sans-serif;
     font-size: 24px;
     margin-bottom: 30px;
     color: #6495ED;
@@ -102,7 +142,7 @@
 .navbar-brand span {
 
   font-size: 1.5rem;
-  font-weight: bold;
+  font-weight: normal;
   color: #006400;
 }
 
