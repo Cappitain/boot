@@ -18,4 +18,7 @@ export class LoginComponent {
   goToRegister() {
     this.router.navigate(['/regis']);
   }
+  goTomain2() {
+    this.router.navigate(['main2']);
+  }
 }
