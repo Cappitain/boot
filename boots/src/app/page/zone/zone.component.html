@@ -56,8 +56,7 @@
         <h3>Booths in {{ selectedZone.zoneName }}</h3>
         <div *ngFor="let booth of filteredBooths" style="margin-bottom: 20px;">
           <img [src]="booth.boothPicture" alt="boothPicture" height="150px" width="200px">
-          <p>{{ booth.boothName }}</p>
-          <p>{{ booth.boothPrice }}</p>
+            รหัส: {{booth.boothID}} ชื่อบูธ: {{ booth.boothName }} ขนาด: {{booth.boothSize}} ราคา: {{ booth.boothPrice }} สถานะ: {{booth.boothStatus}}
         </div>
       </ng-container>
     </div>
