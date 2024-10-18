@@ -17,7 +17,7 @@
       rel="stylesheet"
     />
   </head>
-</html>
+
 <body>
   <!-- Navbar -->
   <nav class="navbar">
@@ -38,4 +38,20 @@
       </button>
     </div>
   </nav>
+  <div style="display:flex ; flex-direction: column; width: 80%;">
+    <h2>ZONE</h2>
+    <div style="display: flex; flex-direction: row;">
+      <div style="width: 400px;">
+        <mat-selection-list #zone [multiple]="false">
+          <mat-list-option *ngFor="let zone of zones"  style="width: 400px; height: 160px;">
+            <div>
+              <img src="{{zone.zonePicture}}" alt="zonePicture" height="150px" width="200px">
+              {{zone.zoneName}}
+            </div>
+          </mat-list-option>
+        </mat-selection-list>
+      </div>
+    </div>
+  </div>
 </body>
+</html>

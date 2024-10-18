@@ -5,10 +5,11 @@
 //   const zone = Convert.toZone(json);
 
 export interface Zone {
-    zoneID:     number;
-    zoneName:   string;
-    zoneDetail: string;
-    eventID:    number;
+    zoneID:      number;
+    zoneName:    string;
+    zoneDetail:  string;
+    eventID:     number;
+    zonePicture: null;
 }
 
 // Converts JSON strings to/from your types
