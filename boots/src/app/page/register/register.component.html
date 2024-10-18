@@ -1,3 +1,4 @@
+
 <nav class="navbar">
     <div class="navbar-brand" (click)="goTomain()">
       <img src="https://scontent.fbkk12-3.fna.fbcdn.net/v/t39.30808-6/309914793_574900577765443_5992899279459763486_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=o_sfWBwptugQ7kNvgGLZ0ev&_nc_zt=23&_nc_ht=scontent.fbkk12-3.fna&_nc_gid=ARcZLhpulQS0DLitknsDXZC&oh=00_AYCkXOK6n84sxU4OBFSu0zdrSBKafHyTPg-qUtKjqrlt4Q&oe=6717226D" alt="KU Logo" class="logo">
@@ -6,17 +7,10 @@
     </span>
     </div>
   </nav>
-  <!DOCTYPE html>
-<html lang="th">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>สมัครสมาชิก</title>
-    <link rel="stylesheet" href="register.component.scss">
-</head>
-<body>
-    <div class="container">
-        <h2 class="regis">สมัครสมาชิก</h2>
+  <div class="login-container">
+      <div class="login-box">
+        <img src="https://scontent.fbkk12-3.fna.fbcdn.net/v/t39.30808-6/309914793_574900577765443_5992899279459763486_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=o_sfWBwptugQ7kNvgGLZ0ev&_nc_zt=23&_nc_ht=scontent.fbkk12-3.fna&_nc_gid=ARcZLhpulQS0DLitknsDXZC&oh=00_AYCkXOK6n84sxU4OBFSu0zdrSBKafHyTPg-qUtKjqrlt4Q&oe=6717226D" alt="KU Logo" class="logo" />
+        <h2>สมัครสมาชิก</h2>
         <div class="options">
             <span>
               <input type="radio" name="op" value="male"> นาย
@@ -28,27 +22,34 @@
               <input type="radio" name="op" value="other"> นางสาว
             </span>
           </div>
-            <div class="form-group">
-                <label for="firstname">ชื่อ</label>
-                <input type="text" id="firstname" name="firstname" placeholder="ชื่อ" required>
+        <form>
+            <div class="input-group">
+                <label for="email">ชื่อ</label>
+                <input type="email" id="email" placeholder="ชื่อ" />
+              </div>
+            <div class="input-group">
+                <label for="email">นามสกุล</label>
+                <input type="email" id="email" placeholder="นามสกุล" />
+              </div>
+              <div class="input-group">
+                <label for="password">เบอร์โทรศัพท์</label>
+                <input type="password" id="password" placeholder="โทรศัพท์" />
+              </div>
+          <div class="input-group">
+            <label for="email">อีเมล</label>
+            <input type="email" id="email" placeholder="อีเมล" />
+          </div>
+          <div class="input-group">
+            <label for="password">รหัสผ่าน</label>
+            <input type="password" id="password" placeholder="รหัสผ่าน" />
+          </div>
+          <button type="submit" class="login-button" >สมัครสมาชิก</button>
+          <div class="additional-options">
+            <div (click)="goToLogin()">
+                <a>เข้าสู่ระบบ</a> 
             </div>
-            <div class="form-group">
-                <label for="lastname">นามสกุล</label>
-                <input type="text" id="lastname" name="lastname" placeholder="นามสกุล" required>
-            </div>
-            <div class="form-group">
-                <label for="email">อีเมล</label>
-                <input type="email" id="email" name="email" placeholder="อีเมล" required>
-            </div>
-            <div class="form-group">
-                <label for="phone">เบอร์โทรศัพท์</label>
-                <input type="tel" id="phone" name="phone" placeholder="เบอร์โทรศัพท์" required>
-            </div>
-            <div class="form-group">
-                <label for="password">รหัสผ่าน</label>
-                <input type="password" id="password" name="password" placeholder="รหัสผ่าน" required>
-            </div>
-            <button class="regis-button" type="submit">สมัครสมาชิก</button>
+          </div>
+        </form>
+      </div>
     </div>
-</body>
-</html>
+    
