@@ -10,11 +10,4 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'boots';
-
-  constructor(private router: Router) {}
-
-  goToLogin() {
-    this.router.navigate(['/page/login.component.html']);
-  }
 }
