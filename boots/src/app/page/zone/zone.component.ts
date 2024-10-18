@@ -20,7 +20,7 @@ export class zoneComponent {
   zones = Array<Zone>(); 
   booths = Array<Booth>();
   selectedZone: Zone | undefined;
-  filteredBooths: Booth[] = []; // ตัวแปรใหม่เพื่อเก็บบูธที่กรองตามโซนที่เลือก
+  filteredBooths: Booth[] = []; 
 
   constructor(private route: ActivatedRoute,private router: Router,private dataService:DataService, private http:HttpClient){
     http.get(dataService.apiEndpoint + "/zone").subscribe((data:any)=>{
