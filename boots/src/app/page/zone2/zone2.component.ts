@@ -35,9 +35,6 @@ export class zone2Component {
       this.booths = boothCvt.toBooth(JSON.stringify(data));
       console.log(this.booths);
     });
-
-
-
   }
   countBoothsInZone(zone: Zone): number {
     return this.booths.filter(booth => booth.zoneID === zone.zoneID).length;

@@ -10,14 +10,15 @@
   <p>เพิ่มโซนใหม่</p>
 
   <label>ชื่อโซน</label>
-  <input type="text" name="name" id="name" />
+  <input type="text" name="name" id="name" #name/>
 
   <label>รายละเอียดสถานที่</label>
-  <textarea name="detail" cols="30" rows="10" id="detail"></textarea>
+  <textarea name="detail" cols="30" rows="10" id="detail" #detail></textarea>
 
   <label>Url รูปภาพสถานที่</label>
-  <input type="text" name="url" id="url" />
+  <input type="text" name="url" id="url" #url/>
 
-  <button>Add</button>
-  <button>Close</button>
+<button (click)="addNew">Add</button>
+  <button (click)="close()">Close</button>
 </div>
+
