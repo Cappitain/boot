@@ -1,0 +1,24 @@
+<div style="display: flex; flex-direction: column;
+height: 380px; width: 500px; margin: 20px;">
+<p>เพิ่มบูธใหม่</p>
+<label>รหัสบูธ</label>
+<input type="text" name="boothID" #boothID>
+<label>ชื่อบูธ</label>
+<input type="text" name="boothName" #boothName>
+<label>ขนาดบูธ(กว้าง x ยาว)ตารางเมตร</label>
+<input type="text" name="boothSize" #boothSize>
+<label>สถานะ</label>
+<input type="text" name="boothStatus" #boothStatus>
+<label>ราคาบูธ</label>
+<input type="text" name="boothPrice" #boothPrice>
+<label>รูปภาพบูธ</label>
+<input type="text" name="boothPicture" #boothPicture>
+<label>สินค้าที่ขาย</label>
+<input type="text" name="product" #product>
+<label>รหัสโซน</label>
+<input type="text" name="zoneID" #zoneID>
+
+    <button (click)="addBooth(boothID.value, boothName.value, boothSize.value, boothStatus.value, boothPrice.value, boothPicture.value,product.value, +zoneID.value)">
+        เพิ่มข้อมูลโซน</button>
+    <button (click)="close()">close</button>
+</div>

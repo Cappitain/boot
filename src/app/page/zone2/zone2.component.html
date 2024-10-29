@@ -32,11 +32,16 @@
         </span>
       </div>
     </nav>
+    
     <div style="display: flex; flex-direction: row">
       <div style="width: 550px">
-        <button (click)="addnew()">เพิ่มโซน</button>
-        <button (click)="addnew()">แก้ไขโซน</button>
-        <button (click)="addnew()">ลบโซน</button>
+        <button (click)="addNew()">เพิ่มโซน</button>
+        <button (click)="addNew()">แก้ไขโซน</button>
+        <div *ngIf="selectedZone != undefined">
+          <button (click)="delete(this.selectedZone.zoneName)">ลบ</button>
+        </div>
+
+        
         <mat-selection-list
           #zone
           [multiple]="false"
@@ -64,9 +69,9 @@
       <div style="flex-grow: 1; padding-left: 20px">
         <ng-container *ngIf="selectedZone">
           <h3>Booths in {{ selectedZone.zoneName }}</h3>
-          <button (click)="addnew()">เพิ่มบูธ</button>
-          <button (click)="addnew()">แก้ไขบูธ</button>
-          <button (click)="addnew()">ลบบูธ</button>
+          <button (click)="addBooth()">เพิ่มบูธ</button>
+          <button (click)="addNew()">แก้ไขบูธ</button>
+          <button (click)="addNew()">ลบบูธ</button>
           <div *ngFor="let booth of filteredBooths" style="margin-bottom: 20px">
             <img
               [src]="booth.boothPicture"

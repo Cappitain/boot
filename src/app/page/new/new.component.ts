@@ -15,24 +15,27 @@ import { HttpClient } from '@angular/common/http';
 export class NewComponent {
   zones:Array<Zone>;
   response:any;
-  constructor(private data:DataService,private http:HttpClient,private dialogRef:MatDialogRef<NewComponent>){
-    this.zones = data.zone;
+  constructor(private data:DataService,private http:HttpClient,
+    private dialogRef:MatDialogRef<NewComponent>){
+    this.zones = data.zones;
     console.log(this.zones);
   }
   addNew(zoneName: string , zoneDetail: string, eventID: number, zonePicture: string){
     let jsonObj = {
-      zoneName:zoneName,
-      zoneDetail:zoneDetail,
-      eventID:eventID,
-      zonePicture:zonePicture
-    }
-    let jsonString = JSON.stringify(jsonObj);
-    this.http.post(this.data.apiEndpoint + "/admin/addZone", jsonString,
-      {observe:'response'}).subscribe((response) =>{
-        console.log(JSON.stringify(response.status));
-        console.log(JSON.stringify(response.body));
-        this.dialogRef.close();
-      });
+      zoneName: zoneName,
+      zoneDetail: zoneDetail,
+      eventID: eventID,
+      zonePicture: zonePicture
+    };
+
+    this.http.post(this.data.apiEndpoint + "/zone", jsonObj, {
+      headers: { 'Content-Type': 'application/json' },
+      observe: 'response'
+    }).subscribe((response) => {
+      console.log(response.status);
+      console.log(response.body);
+      this.dialogRef.close();
+    });
   }
   close(){
     this.dialogRef.close();

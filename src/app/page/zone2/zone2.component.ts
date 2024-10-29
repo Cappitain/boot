@@ -6,17 +6,17 @@ import { HttpClient } from '@angular/common/http';
 import { Convert as zoneCvt, Zone } from '../../model/zone.model';  
 import { Convert as boothCvt, Booth } from '../../model/booth.model';
 import { Convert as userCvt, MemberInfo} from '../../model/user.model';
-import { MatListModule, MatListOption } from '@angular/material/list';
+import { MatListModule, MatListOption, MatSelectionList } from '@angular/material/list';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-import { MatDialogModule, MatDialog} from '@angular/material/dialog';
+import { MatDialogModule, MatDialog } from '@angular/material/dialog';
 import { NewComponent } from '../new/new.component';
-import { from } from 'rxjs';
+import { NewboothComponent } from '../newbooth/newbooth.component';
 
 @Component({
   selector: 'app-zone',
   standalone: true,
-  imports: [RouterOutlet,MatListModule,CommonModule,MatDialogModule],
+  imports: [MatSelectionList,RouterOutlet,MatListModule,CommonModule,MatDialogModule],
   templateUrl: './zone2.component.html',
   styleUrl: './zone2.component.scss'
 })
@@ -66,10 +66,24 @@ export class zone2Component {
   goTomain2() {
     this.router.navigate(['main2']);
   }
-  addnew() {
-    this.dataService.zone =this.zones;
+
+  delete(zoneName : string){
+    if (confirm("ยืนยันการลบโซนนี้ ?")){
+      this.http.delete(this.dataService.apiEndpoint + "/zone/" + zoneName)
+      .subscribe((response) =>{
+        console.log(response);
+      });
+    }
+  } 
+  addNew() {
+    this.dataService.zones =this.zones;
     this.dialog.open(NewComponent,{
       minWidth:'300px',
+    });
+  }
+  addBooth(){
+    this.dialog.open(NewboothComponent, {
+      minWidth: '300px',
     });
   }
 }
