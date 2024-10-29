@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>จองบูธงานเกษตรแฟร์</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Mitr:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="navbar-brand" (click)="goTomain2()">
+        <img
+          src="https://scontent.fbkk12-3.fna.fbcdn.net/v/t39.30808-6/309914793_574900577765443_5992899279459763486_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=o_sfWBwptugQ7kNvgGLZ0ev&_nc_zt=23&_nc_ht=scontent.fbkk12-3.fna&_nc_gid=ARcZLhpulQS0DLitknsDXZC&oh=00_AYCkXOK6n84sxU4OBFSu0zdrSBKafHyTPg-qUtKjqrlt4Q&oe=6717226D"
+          alt="KU Logo"
+          class="logo"
+        />
+        <span>
+          <a>จองบูธงานเกษตรแฟร์</a>
+        </span>
+      </div>
+    </nav>
+    <div style="display: flex; flex-direction: row">
+      <div style="width: 550px">
+        <button (click)="addnew()">เพิ่มโซน</button>
+        <button (click)="addnew()">แก้ไขโซน</button>
+        <button (click)="addnew()">ลบโซน</button>
+        <mat-selection-list
+          #zone
+          [multiple]="false"
+          (selectionChange)="show($event.options[0])"
+        >
+          <mat-list-option
+            *ngFor="let zone of zones"
+            [value]="zone"
+            style="width: 550px; height: 160px"
+          >
+            <div>
+              <img
+                src="{{ zone.zonePicture }}"
+                alt="zonePicture"
+                height="150px"
+                width="200px"
+              />
+              รหัส:{{ zone.zoneID }} ชื่อโซน: {{ zone.zoneName }} จำนวนบูธที่มี:
+              {{ countBoothsInZone(zone) }}
+            </div>
+          </mat-list-option>
+        </mat-selection-list>
+      </div>
+
+      <div style="flex-grow: 1; padding-left: 20px">
+        <ng-container *ngIf="selectedZone">
+          <h3>Booths in {{ selectedZone.zoneName }}</h3>
+          <button (click)="addnew()">เพิ่มบูธ</button>
+          <button (click)="addnew()">แก้ไขบูธ</button>
+          <button (click)="addnew()">ลบบูธ</button>
+          <div *ngFor="let booth of filteredBooths" style="margin-bottom: 20px">
+            <img
+              [src]="booth.boothPicture"
+              alt="boothPicture"
+              height="150px"
+              width="200px"
+            />
+            รหัส: {{ booth.boothID }} ชื่อบูธ: {{ booth.boothName }} ขนาด:
+            {{ booth.boothSize }} ราคา: {{ booth.boothPrice }} สถานะ:
+            {{ booth.boothStatus }}
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </body>
+</html>

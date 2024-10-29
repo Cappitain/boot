@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>จองบูธงานเกษตรแฟร์</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Mitr:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-brand" (click)="goTomain()">
+        <img
+          src="https://scontent.fbkk12-3.fna.fbcdn.net/v/t39.30808-6/309914793_574900577765443_5992899279459763486_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=o_sfWBwptugQ7kNvgGLZ0ev&_nc_zt=23&_nc_ht=scontent.fbkk12-3.fna&_nc_gid=ARcZLhpulQS0DLitknsDXZC&oh=00_AYCkXOK6n84sxU4OBFSu0zdrSBKafHyTPg-qUtKjqrlt4Q&oe=6717226D"
+          alt="KU Logo"
+          class="logo"
+        />
+        <span>
+          <a>จองบูธงานเกษตรแฟร์</a>
+        </span>
+      </div>
+    </nav>
+    <div class="login-container">
+      <div class="login-box">
+        <img
+          src="https://scontent.fbkk12-3.fna.fbcdn.net/v/t39.30808-6/309914793_574900577765443_5992899279459763486_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=o_sfWBwptugQ7kNvgGLZ0ev&_nc_zt=23&_nc_ht=scontent.fbkk12-3.fna&_nc_gid=ARcZLhpulQS0DLitknsDXZC&oh=00_AYCkXOK6n84sxU4OBFSu0zdrSBKafHyTPg-qUtKjqrlt4Q&oe=6717226D"
+          alt="KU Logo"
+          class="logo"
+        />
+        <h2>เข้าสู่ระบบ</h2>
+        <form>
+          <div class="input-group">
+            <label for="email">อีเมล</label>
+            <input type="email" id="email" placeholder="อีเมล" required />
+          </div>
+          <div class="input-group">
+            <label for="password">รหัสผ่าน</label>
+            <input
+              type="password"
+              id="password"
+              placeholder="รหัสผ่าน"
+              required
+            />
+          </div>
+          <button (click)="goTomain2()" class="login-button">เข้าสู่ระบบ</button>
+          <div class="additional-options">
+            <a (click)="goToRegister()">สมัครสมาชิก</a> |
+            <a href="#">ลืมรหัสผ่าน?</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<div
+  style="
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    width: 500px;
+    margin: 20px;
+  "
+>
+  <p>เพิ่มโซนใหม่</p>
+
+  <label>ชื่อโซน</label>
+  <input type="text" name="zoneName"  #zoneName/>
+
+  <label>รายละเอียดสถานที่</label>
+  <textarea type="text" name="zoneDetail" cols="30" rows="10"  #zoneDetail></textarea>
+
+  <label>รหัสอีเวนท์</label>
+  <textarea type="number" name="eventID" cols="30" rows="10"  #eventID></textarea>
+
+  <label>Url รูปภาพสถานที่</label>
+  <input type="text" name="zonePicture"  #zonePicture/>
+
+<button (click)=addNew(zoneName.value,zoneDetail.value,+eventID.value,zonePicture.value)>Add</button>
+  <button (click)="close()">Close</button>
+</div>
+

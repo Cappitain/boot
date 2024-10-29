@@ -1,0 +1,192 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+  }
+  
+  .login-box {
+    margin-bottom: 1.5rem;
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 500px;
+  }
+  
+  .logo {
+    max-width: 100px;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #6495ED;
+  }
+  
+  .input-group {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .login-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .login-button:hover {
+    background-color: #557bb5;
+  }
+  
+  .additional-options {
+    margin-top: 15px;
+    font-size: 14px;
+  }
+  .additional-options a {
+    color: #6495ED;
+    text-decoration: none;
+  }  
+  .additional-options a:hover {
+    text-decoration: underline;
+  }
+/* Navbar Styles */
+.navbar {
+  width: auto;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f0f8ff;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  width: 293.438;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.logo {
+  margin-top: 20px;
+  width: 50px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.navbar-brand span {
+
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #006400;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 20px;
+}
+
+
+.navbar-actions {
+  display: flex;
+  gap: 10px;
+}
+
+a {
+  color: #006400;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* กำหนดสีที่ต้องการใช้ */
+:root {
+    --primary-color: #007bff; /* สีหลัก เช่น สีของปุ่ม */
+    --secondary-color: #f8f9fa; /* สีพื้นหลัง */
+    --text-color: #333; /* สีตัวอักษร */
+  }
+  
+
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #6495ED;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  input[type="radio"] {
+    /* กำหนดขนาดและรูปแบบของ radio button */
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+  }
+
+  .options {
+    display: flex;  
+    justify-content: space-between ; 
+    margin: 0 100px  5px 100px ;
+  }
+
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--text-color);
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  .regis-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    justify-content: center;
+    display: flex;
+  }
+  
+  button:hover {
+    background-color: #0069d9;
+  }
+  .regis{
+    display: flex;
+    justify-content: center;
+  }

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>จองบูธงานเกษตรแฟร์</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Mitr:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <img
+          src="https://scontent.fbkk12-3.fna.fbcdn.net/v/t39.30808-6/309914793_574900577765443_5992899279459763486_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=o_sfWBwptugQ7kNvgGLZ0ev&_nc_zt=23&_nc_ht=scontent.fbkk12-3.fna&_nc_gid=ARcZLhpulQS0DLitknsDXZC&oh=00_AYCkXOK6n84sxU4OBFSu0zdrSBKafHyTPg-qUtKjqrlt4Q&oe=6717226D"
+          alt="KU Logo"
+          class="logo"
+        />
+        <span>
+          <a>จองบูธงานเกษตรแฟร์</a>
+        </span>
+      </div>
+      <div class="navbar-actions">
+        <button (click)="goToZone()" class="zone-button">
+          รายละเอียดแต่ละโซน
+        </button>
+      </div>
+      <div class="navbar-actions">
+        <button (click)="goToLogin()" class="login-button">เข้าสู่ระบบ</button>
+        <button (click)="goToRegister()" class="signup-button">
+          สมัครสมาชิก
+        </button>
+      </div>
+    </nav>
+
+    <!-- Map Section -->
+    <div class="map-container">
+      <img
+        src="assets/img/ZONE2.png"
+        usemap="#image-map"
+        alt="ZONE A"
+        width="1100"
+      />
+      <map name="image-map">
+        <area
+          (click)="goToLogin()"
+          target=""
+          alt="zoneA"
+          title=""
+          coords="0,0,253,290"
+          shape="rect"
+        />
+        <area
+          (click)="goToLogin()"
+          target=""
+          alt="zoneB"
+          title=""
+          coords="331,14,1234,301"
+          shape="rect"
+        />
+        <area
+          (click)="goToLogin()"
+          target=""
+          alt="zoneC"
+          title=""
+          coords="0,360,501,635"
+          shape="rect"
+        />
+        <area
+          (click)="goToLogin()"
+          target=""
+          alt="zoneD"
+          title=""
+          coords="553,384,1250,680"
+          shape="rect"
+        />
+      </map>
+    </div>
+  </body>
+</html>
