@@ -12,6 +12,8 @@ import { MatMenuModule } from '@angular/material/menu';
 })
 export class Main2Component { 
   title = 'boots';
+  isLoggedInAdmin: boolean = true;
+  isLoggedIn: boolean | undefined;
 
   constructor(private router: Router) {}
   goToLogin() {
@@ -26,4 +28,23 @@ export class Main2Component {
   goTomain() {
     this.router.navigate(['']);
   }
+  ngOnInit() {
+
+    const loggedInStatus = localStorage.getItem('isLoggedInAdmin');
+    this.isLoggedInAdmin = loggedInStatus === 'true'; // แปลงค่าเป็น boolean
+    const email = localStorage.getItem('email');
+    console.log(email);
+  }
+
+  logout() {
+  
+  this.isLoggedIn = false;
+  localStorage.clear();
+  localStorage.removeItem('isLoggedIn');
+  localStorage.removeItem('isLoggedInAdmin'); // ลบค่าออกจาก localStorage
+    setTimeout(() => {
+      this.router.navigate(['/']).then(() => {window.location.reload(); });
+  }, 100);
+  alert('Logout Success!!')
+}
 }
