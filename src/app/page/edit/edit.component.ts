@@ -13,28 +13,23 @@ import { Zone } from 'zone.js/lib/zone-impl';
 })
 export class EditComponent {
   zones:Array<Zone>;
-  selectedzones: Zone;
-  response:any;
+  selectedzones: any;
   constructor(private data:DataService,private http:HttpClient,
     private dialogRef:MatDialogRef<EditComponent>){
     this.zones = data.zones;
-    console.log(this.zones);
     this.selectedzones = data.selectedzones;
-}
-close(){
-  this.dialogRef.close();
-}
+    console.log(this.zones);
+  }
+  save(zoneName: string , zoneDetail: string, eventID: number, zonePicture: string,zoneID : number){
+    let jsonObj = {
+      zoneName: zoneName,
+      zoneDetail: zoneDetail,
+      eventID: eventID,
+      zonePicture: zonePicture
+    };
 
-save(zoneName: string , zoneDetail: string, eventID: number, zonePicture: string){
-  let jsonObj = {
-    zoneName: zoneName,
-    zoneDetail: zoneDetail,
-    eventID: eventID,
-    zonePicture: zonePicture
-  };
   let jsonString = JSON.stringify(jsonObj);
-  this.http.put(this.data.apiEndpoint + "/zone", jsonString, {
-    headers: { 'Content-Type': 'application/json' },
+  this.http.put(this.data.apiEndpoint + "/admin/zoneUpdate" + zoneID, jsonString, {
     observe: 'response'
   }).subscribe((response) => {
     console.log(response.status);
@@ -43,4 +38,7 @@ save(zoneName: string , zoneDetail: string, eventID: number, zonePicture: string
   });
 }
 
+close(){
+  this.dialogRef.close();
+}
 }

@@ -8,19 +8,44 @@
   "
 >
   <p>เพิ่มโซนใหม่</p>
-
   <label>ชื่อโซน</label>
-  <input type="text" name="zoneName" #zoneName value="" />
+  <input
+    type="text"
+    name="zoneName"
+    #zoneName
+    value="{{ selectedzones.zoneName }}"
+  />
   <label>รายละเอียดสถานที่</label>
-  <input type="text" name="zoneDetail" #zoneDetail />
+  <input
+    type="text"
+    name="zoneDetail"
+    #zoneDetail
+    value="{{ selectedzones.zoneDetail }}"
+  />
   <label>รหัสอีเวนท์</label>
-  <input type="number" name="eventID" #eventID />
+  <input
+    type="number"
+    name="eventID"
+    #eventID
+    value="{{ selectedzones.eventID }}"
+  />
   <label>Url รูปภาพสถานที่</label>
-  <input type="text" name="zonePicture" #zonePicture />
+  <input
+    type="text"
+    name="zonePicture"
+    #zonePicture
+    value="{{ selectedzones.zonePicture }}"
+  />
 
   <button
     (click)="
-      save(zoneName.value, zoneDetail.value, +eventID.value, zonePicture.value)
+      save(
+        zoneName.value,
+        zoneDetail.value,
+        +eventID.value,
+        zonePicture.value,
+        +selectedzones.zoneID
+      )
     "
   >
     Add
