@@ -29,7 +29,7 @@ export class EditComponent {
     };
 
   let jsonString = JSON.stringify(jsonObj);
-  this.http.put(this.data.apiEndpoint + "/admin/zoneUpdate" + zoneID, jsonString, {
+  this.http.put(this.data.apiEndpoint + "/admin/zoneUpdate/"+ zoneID , jsonString, {
     observe: 'response'
   }).subscribe((response) => {
     console.log(response.status);
