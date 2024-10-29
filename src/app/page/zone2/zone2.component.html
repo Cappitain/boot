@@ -69,7 +69,7 @@
           BOOTH
         </button>
         <mat-menu #menuBOOTH="matMenu">
-          <button mat-menu-item>เพิ่มบูธ</button>
+          <button mat-menu-item (click)="addBooth()">เพิ่มบูธ</button>
           <button mat-menu-item>แก้ไขบูธ</button>
           <button mat-menu-item>ลบบูธ</button>
         </mat-menu>
@@ -78,11 +78,6 @@
 
     <div style="display: flex; flex-direction: row">
       <div style="width: 550px">
-        <button (click)="addNew()">เพิ่มโซน</button>
-        <button (click)="addNew()">แก้ไขโซน</button>
-        <div *ngIf="selectedZone != undefined">
-          <button (click)="delete(this.selectedZone.zoneName)">ลบ</button>
-        </div>
 
         <mat-selection-list
           #zone
@@ -111,9 +106,6 @@
       <div style="flex-grow: 1; padding-left: 20px">
         <ng-container *ngIf="selectedZone">
           <h3>Booths in {{ selectedZone.zoneName }}</h3>
-          <button (click)="addBooth()">เพิ่มบูธ</button>
-          <button (click)="addNew()">แก้ไขบูธ</button>
-          <button (click)="addNew()">ลบบูธ</button>
           <div *ngFor="let booth of filteredBooths" style="margin-bottom: 20px">
             <img
               [src]="booth.boothPicture"

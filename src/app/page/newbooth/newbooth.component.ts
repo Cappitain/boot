@@ -20,9 +20,9 @@ export class NewboothComponent {
       this.booths = data.booths;
       console.log(this.booths);
     }
-    addBooth(boothID: string, boothName:string, boothSize:string, boothStatus:string, boothPrice:string, boothPicture:string, product:string, zoneID:number){
+    addBooth( boothName:string, boothSize:string, boothStatus:string, boothPrice:string, boothPicture:string, product:string, zoneID:number){
       let jsonObj = {
-        boothID:boothID,
+
         boothName:boothName,
         boothSize:boothSize,
         boothStatus:boothStatus,
