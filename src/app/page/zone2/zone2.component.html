@@ -78,11 +78,7 @@
 
     <div style="display: flex; flex-direction: row">
       <div style="width: 550px">
-        <button (click)="addNew()">เพิ่มโซน</button>
-        <button (click)="addNew()">แก้ไขโซน</button>
-        <div *ngIf="selectedZone != undefined">
-          <button (click)="delete(this.selectedZone.zoneName)">ลบ</button>
-        </div>
+        
 
         <mat-selection-list
           #zone
