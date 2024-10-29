@@ -31,8 +31,51 @@
           <a>จองบูธงานเกษตรแฟร์</a>
         </span>
       </div>
+      <div>
+        <button
+          mat-flat-button
+          [matMenuTriggerFor]="menuEVENT"
+          class="zone-button"
+        >
+          EVENT
+        </button>
+        <mat-menu #menuEVENT="matMenu">
+          <button mat-menu-item>ดูข้อมูลจัดการงาน</button>
+          <button mat-menu-item>เพิ่มข้อมูลจัดการงาน</button>
+          <button mat-menu-item>แก้ไขข้อมูลจัดการงาน</button>
+          <button mat-menu-item>ลบข้อมูลจัดการงาน</button>
+        </mat-menu>
+      </div>
+      <div>
+        <button
+          mat-flat-button
+          [matMenuTriggerFor]="menuZONE"
+          class="zone-button"
+        >
+          ZONE
+        </button>
+        <mat-menu #menuZONE="matMenu">
+          <button mat-menu-item (click)="addNew()">เพิ่มโซน</button>
+          <button mat-menu-item>แก้ไขโซน</button>
+          <button mat-menu-item>ลบโซน</button>
+        </mat-menu>
+      </div>
+      <div>
+        <button
+          mat-flat-button
+          [matMenuTriggerFor]="menuBOOTH"
+          class="zone-button"
+        >
+          BOOTH
+        </button>
+        <mat-menu #menuBOOTH="matMenu">
+          <button mat-menu-item>เพิ่มบูธ</button>
+          <button mat-menu-item>แก้ไขบูธ</button>
+          <button mat-menu-item>ลบบูธ</button>
+        </mat-menu>
+      </div>
     </nav>
-    
+
     <div style="display: flex; flex-direction: row">
       <div style="width: 550px">
         <button (click)="addNew()">เพิ่มโซน</button>
@@ -41,7 +84,6 @@
           <button (click)="delete(this.selectedZone.zoneName)">ลบ</button>
         </div>
 
-        
         <mat-selection-list
           #zone
           [multiple]="false"

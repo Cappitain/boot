@@ -12,11 +12,12 @@ import { ActivatedRoute } from '@angular/router';
 import { MatDialogModule, MatDialog } from '@angular/material/dialog';
 import { NewComponent } from '../new/new.component';
 import { NewboothComponent } from '../newbooth/newbooth.component';
+import { MatMenuModule } from '@angular/material/menu';
 
 @Component({
   selector: 'app-zone',
   standalone: true,
-  imports: [MatSelectionList,RouterOutlet,MatListModule,CommonModule,MatDialogModule],
+  imports: [MatSelectionList,RouterOutlet,MatListModule,CommonModule,MatDialogModule,MatMenuModule],
   templateUrl: './zone2.component.html',
   styleUrl: './zone2.component.scss'
 })

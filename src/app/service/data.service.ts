@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class DataService {
   zones: any;
+  selectedzones: any;
   booths: any;
   apiEndpoint = 'http://localhost/webapi'
 
