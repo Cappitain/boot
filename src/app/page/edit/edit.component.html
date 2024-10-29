@@ -10,7 +10,7 @@
   <p>เพิ่มโซนใหม่</p>
 
   <label>ชื่อโซน</label>
-  <input type="text" name="zoneName" #zoneName />
+  <input type="text" name="zoneName" #zoneName value="" />
   <label>รายละเอียดสถานที่</label>
   <input type="text" name="zoneDetail" #zoneDetail />
   <label>รหัสอีเวนท์</label>
@@ -20,12 +20,7 @@
 
   <button
     (click)="
-      addNew(
-        zoneName.value,
-        zoneDetail.value,
-        +eventID.value,
-        zonePicture.value
-      )
+      save(zoneName.value, zoneDetail.value, +eventID.value, zonePicture.value)
     "
   >
     Add

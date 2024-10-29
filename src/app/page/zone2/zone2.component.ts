@@ -13,6 +13,7 @@ import { MatDialogModule, MatDialog } from '@angular/material/dialog';
 import { NewComponent } from '../new/new.component';
 import { NewboothComponent } from '../newbooth/newbooth.component';
 import { MatMenuModule } from '@angular/material/menu';
+import { EditComponent } from '../edit/edit.component';
 
 @Component({
   selector: 'app-zone',
@@ -79,6 +80,13 @@ export class zone2Component {
   addNew() {
     this.dataService.zones =this.zones;
     this.dialog.open(NewComponent,{
+      minWidth:'300px',
+    });
+  }
+  edit() {
+    this.dataService.selectedzones =this.selectedZone;
+    this.dataService.zones = this.zones;
+    this.dialog.open(EditComponent,{
       minWidth:'300px',
     });
   }

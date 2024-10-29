@@ -1,66 +1,46 @@
-import { Component } from '@angular/core';
-import { Zone } from '../../model/zone.model';
-import { DataService } from '../../service/data.service';
-import { CommonModule } from '@angular/common';
-import { MatDialogRef, MatDialogModule } from '@angular/material/dialog';
 import { HttpClient } from '@angular/common/http';
+import { Component } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
+import { DataService } from '../../service/data.service';
+import { Zone } from 'zone.js/lib/zone-impl';
 
 @Component({
-  selector: 'app-new',
+  selector: 'app-edit',
   standalone: true,
-  imports: [CommonModule,MatDialogModule],
-  templateUrl: './new.component.html',
-  styleUrl: './new.component.scss'
+  imports: [],
+  templateUrl: './edit.component.html',
+  styleUrl: './edit.component.scss'
 })
-export class NewComponent {
+export class EditComponent {
   zones:Array<Zone>;
-  selectedzones: any;
+  selectedzones: Zone;
+  response:any;
   constructor(private data:DataService,private http:HttpClient,
-    private dialogRef:MatDialogRef<NewComponent>){
+    private dialogRef:MatDialogRef<EditComponent>){
     this.zones = data.zones;
-    this.selectedzones = data.selectedzones;
     console.log(this.zones);
-  }
-  edit(){
-    
-  }
+    this.selectedzones = data.selectedzones;
+}
+close(){
+  this.dialogRef.close();
+}
 
-  addNew(zoneName: string , zoneDetail: string, eventID: number, zonePicture: string){
-    let jsonObj = {
-      zoneName: zoneName,
-      zoneDetail: zoneDetail,
-      eventID: eventID,
-      zonePicture: zonePicture
-    };
-
-    this.http.post(this.data.apiEndpoint + "/zone", jsonObj, {
-      headers: { 'Content-Type': 'application/json' },
-      observe: 'response'
-    }).subscribe((response) => {
-      console.log(response.status);
-      console.log(response.body);
-      this.dialogRef.close();
-    });
-  }
-  save(zoneName: string , zoneDetail: string, eventID: number, zonePicture: string){
-    let jsonObj = {
-      zoneName: zoneName,
-      zoneDetail: zoneDetail,
-      eventID: eventID,
-      zonePicture: zonePicture
-    };
-
-    this.http.post(this.data.apiEndpoint + "/zone", jsonObj, {
-      headers: { 'Content-Type': 'application/json' },
-      observe: 'response'
-    }).subscribe((response) => {
-      console.log(response.status);
-      console.log(response.body);
-      this.dialogRef.close();
-    });
-  }
-  close(){
+save(zoneName: string , zoneDetail: string, eventID: number, zonePicture: string){
+  let jsonObj = {
+    zoneName: zoneName,
+    zoneDetail: zoneDetail,
+    eventID: eventID,
+    zonePicture: zonePicture
+  };
+  let jsonString = JSON.stringify(jsonObj);
+  this.http.put(this.data.apiEndpoint + "/zone", jsonString, {
+    headers: { 'Content-Type': 'application/json' },
+    observe: 'response'
+  }).subscribe((response) => {
+    console.log(response.status);
+    console.log(response.body);
     this.dialogRef.close();
-  }
-  
+  });
+}
+
 }
