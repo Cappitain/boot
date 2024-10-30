@@ -6,6 +6,7 @@ import { RegisterComponent } from './page/register/register.component';
 import { zoneComponent } from './page/zone/zone.component';
 import { Main2Component } from './page/main2/main2.component';
 import { zone2Component } from './page/zone2/zone2.component';
+import { InfoComponent } from './page/info/info.component';
 
 export const routes: Routes = [
   { path: '', component: MainComponent},
@@ -14,7 +15,9 @@ export const routes: Routes = [
   { path: 'zone', component: zoneComponent },
   { path: 'main2', component: Main2Component},
   { path: 'zone2', component: zone2Component },
+  { path: 'info', component: InfoComponent },
   
+
 ];
 
 @NgModule({

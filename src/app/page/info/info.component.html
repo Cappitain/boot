@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>จองบูธงานเกษตรแฟร์</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Mitr:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="navbar-brand" (click)="goTomain2()">
+        <img
+          src="https://scontent.fbkk12-3.fna.fbcdn.net/v/t39.30808-6/309914793_574900577765443_5992899279459763486_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=o_sfWBwptugQ7kNvgGLZ0ev&_nc_zt=23&_nc_ht=scontent.fbkk12-3.fna&_nc_gid=ARcZLhpulQS0DLitknsDXZC&oh=00_AYCkXOK6n84sxU4OBFSu0zdrSBKafHyTPg-qUtKjqrlt4Q&oe=6717226D"
+          alt="KU Logo"
+          class="logo"
+        />
+        <span>
+          <a>จองบูธงานเกษตรแฟร์</a>
+        </span>
+      </div>
+      <div class="navbar-actions">
+        <button (click)="logout()" class="main-button">ออกจาระบบ</button>
+      </div>
+    </nav>
+
+    <!-- info Section -->
+    <div class="login-container">
+        <div class="login-box">
+        <h2>แก้ไขข้อมูลผู้ใช้</h2>
+  <form (ngSubmit)="updateUsers()">
+
+    <div class="form-group">
+      <label for="titleName">คำนำหน้าชื่อ</label>
+
+      <input
+        type="text"
+        class="form-control"
+        id="titlename"
+        name="titlename"
+        [(ngModel)]="user.titleName"
+      />
+    </div>
+
+
+    <div class="form-group">
+      <label for="firstname">ชื่อ</label>
+      <input
+        type="text"
+        class="form-control"
+        id="firstname"
+        name="firstname"
+        [(ngModel)]="user.firstName"
+      />
+    </div>
+
+
+    <div class="form-group">
+      <label for="lastname">นามสกุล</label>
+      <input
+        type="text"
+        class="form-control"
+        id="lastname"
+        name="lastname"
+        [(ngModel)]="user.lastName"
+      />
+    </div>
+
+
+    <div class="form-group">
+      <label for="email">อีเมล</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        name="email"
+        [(ngModel)]="user.email"
+      />
+    </div>
+
+
+    <div class="form-group">
+      <label for="telephone">เบอร์โทรศัพท์</label>
+      <input
+        type="text"
+        class="form-control"
+        id="telephone"
+        name="telephone"
+        [(ngModel)]="user.telephone"
+      />
+    </div>
+
+
+    <div class="form-group">
+      <label for="password">รหัสผ่าน</label>
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        name="password"
+        [(ngModel)]="user.password"
+      />
+    </div>
+
+
+    <button type="submit" class="submit-button">แก้ไขข้อมูล</button>
+  </form>
+</div>
+    <!-- <a [routerLink]="['/memberpassreset']" routerLinkActive="active" >แก้ไขรหัสผ่าน</a> -->
+    </div>
+  </body>
+</html>

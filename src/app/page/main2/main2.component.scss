@@ -74,7 +74,7 @@
     gap: 10px;
   }
   
-  .login-button, .signup-button, .zone-button {
+  .login-button, .signup-button, .zone-button, .info-button {
     font-family: "Mitr", sans-serif;
     font-weight: 300;
     font-style: normal;
@@ -99,6 +99,13 @@
   }
 
   .zone-button {
+    font-family: "Mitr", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    background-color: #0f8bff;
+    color: white;
+  }
+  .info-button {
     font-family: "Mitr", sans-serif;
     font-weight: 300;
     font-style: normal;

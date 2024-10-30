@@ -25,6 +25,9 @@ export class Main2Component {
   goToZone2() {
     this.router.navigate(['/zone2']);
   }
+  goToInfo() {
+    this.router.navigate(['/info']);
+  }
   goTomain() {
     this.router.navigate(['']);
   }
