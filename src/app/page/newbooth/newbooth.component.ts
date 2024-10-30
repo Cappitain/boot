@@ -37,6 +37,7 @@ export class NewboothComponent {
         {observe:'response'}).subscribe((response) =>{
           console.log(JSON.stringify(response.status));
           console.log(JSON.stringify(response.body));
+          this.dialogRef.close();
         })
     }
     close(){

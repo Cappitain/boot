@@ -15,6 +15,7 @@ import { NewboothComponent } from '../newbooth/newbooth.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { EditComponent } from '../edit/edit.component';
 import { MatSelectionListChange } from '@angular/material/list';  
+import { EditboothComponent } from '../editbooth/editbooth.component';
 
 
 @Component({
@@ -113,7 +114,13 @@ deletezone(zoneId: number) {
       console.error('Error deleting zone', error);
   });
 }
-
+editbooth() {
+  this.dataService.selectedBooth =this.selectedBooth;
+  this.dataService.booths = this.booths;
+  this.dialog.open(EditboothComponent,{
+    minWidth:'300px',
+  });
+}
 
 
 
