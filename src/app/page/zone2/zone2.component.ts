@@ -105,5 +105,13 @@ export class zone2Component {
     console.log("Selected Booth:", this.selectedBooth);
     // เพิ่มการประมวลผลเพิ่มเติมสำหรับบูธที่เลือกได้ที่นี่
 }
+deletezone(zoneId: number) {
+  if (confirm("ยืนยันการลบโซนนี้หรือไม่?")) {
+    this.http.delete(this.dataService.apiEndpoint + "/admin/delZone" + zoneId).subscribe(res => {
+      console.log(res);
+    });
+  }
+}
+
 }
 
