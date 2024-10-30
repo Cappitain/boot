@@ -14,6 +14,8 @@ import { NewComponent } from '../new/new.component';
 import { NewboothComponent } from '../newbooth/newbooth.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { EditComponent } from '../edit/edit.component';
+import { MatSelectionListChange } from '@angular/material/list';  
+
 
 @Component({
   selector: 'app-zone',
@@ -28,6 +30,7 @@ export class zone2Component {
   booths = Array<Booth>();
   events = Array<Event>();
   selectedZone: Zone | undefined;
+  selectedBooth: Booth | undefined;
   filteredBooths: Booth[] = []; 
 
   constructor(private route: ActivatedRoute,private router: Router,private dataService:DataService, private http:HttpClient, private dialog : MatDialog){
@@ -95,4 +98,12 @@ export class zone2Component {
       minWidth: '300px',
     });
   }
+  onBoothSelect(event: MatSelectionListChange) {
+    // ดึงข้อมูลบูธที่ถูกเลือกในแต่ละครั้ง
+    const selectedBooth = event.options[0]?.value;
+    this.selectedBooth = selectedBooth;
+    console.log("Selected Booth:", this.selectedBooth);
+    // เพิ่มการประมวลผลเพิ่มเติมสำหรับบูธที่เลือกได้ที่นี่
 }
+}
+
