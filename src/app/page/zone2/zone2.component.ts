@@ -15,6 +15,7 @@ import { NewboothComponent } from '../newbooth/newbooth.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { EditComponent } from '../edit/edit.component';
 import { MatSelectionListChange } from '@angular/material/list';  
+import { EditboothComponent } from '../editbooth/editbooth.component';
 
 
 @Component({
@@ -105,5 +106,23 @@ export class zone2Component {
     console.log("Selected Booth:", this.selectedBooth);
     // เพิ่มการประมวลผลเพิ่มเติมสำหรับบูธที่เลือกได้ที่นี่
 }
+deletezone(zoneId: number) {
+  this.http.delete(`http://localhost/webapi/admin/delZone/${zoneId}`) // แก้ไขที่นี่
+  .subscribe(response => {
+      console.log('Deleted successfully', response);
+  }, error => {
+      console.error('Error deleting zone', error);
+  });
+}
+editbooth() {
+  this.dataService.selectedBooth =this.selectedBooth;
+  this.dataService.booths = this.booths;
+  this.dialog.open(EditboothComponent,{
+    minWidth:'300px',
+  });
+}
+
+
+
 }
 

@@ -31,21 +31,7 @@
           <a>จองบูธงานเกษตรแฟร์</a>
         </span>
       </div>
-      <div>
-        <button
-          mat-flat-button
-          [matMenuTriggerFor]="menuEVENT"
-          class="zone-button"
-        >
-          EVENT
-        </button>
-        <mat-menu #menuEVENT="matMenu">
-          <button mat-menu-item>ดูข้อมูลจัดการงาน</button>
-          <button mat-menu-item>เพิ่มข้อมูลจัดการงาน</button>
-          <button mat-menu-item>แก้ไขข้อมูลจัดการงาน</button>
-          <button mat-menu-item>ลบข้อมูลจัดการงาน</button>
-        </mat-menu>
-      </div>
+
       <div>
         <button
           mat-flat-button
@@ -57,7 +43,12 @@
         <mat-menu #menuZONE="matMenu">
           <button mat-menu-item (click)="addNew()">เพิ่มโซน</button>
           <button mat-menu-item (click)="edit()">แก้ไขโซน</button>
-          <button mat-menu-item>ลบโซน</button>
+          <button
+            mat-menu-item
+            (click)="selectedZone ? deletezone(selectedZone.zoneID) : null"
+          >
+            ลบโซน
+          </button>
         </mat-menu>
       </div>
       <div>
@@ -70,8 +61,7 @@
         </button>
         <mat-menu #menuBOOTH="matMenu">
           <button mat-menu-item (click)="addBooth()">เพิ่มบูธ</button>
-          <button mat-menu-item>แก้ไขบูธ</button>
-          <button mat-menu-item>ลบบูธ</button>
+          <button mat-menu-item (click)="editbooth()">แก้ไขบูธ</button>
         </mat-menu>
       </div>
     </nav>
