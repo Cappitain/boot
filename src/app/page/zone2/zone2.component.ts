@@ -106,12 +106,16 @@ export class zone2Component {
     // เพิ่มการประมวลผลเพิ่มเติมสำหรับบูธที่เลือกได้ที่นี่
 }
 deletezone(zoneId: number) {
-  if (confirm("ยืนยันการลบโซนนี้หรือไม่?")) {
-    this.http.delete(this.dataService.apiEndpoint + "/admin/delZone" + zoneId).subscribe(res => {
-      console.log(res);
-    });
-  }
+  this.http.delete(`http://localhost/webapi/admin/delZone/${zoneId}`) // แก้ไขที่นี่
+  .subscribe(response => {
+      console.log('Deleted successfully', response);
+  }, error => {
+      console.error('Error deleting zone', error);
+  });
 }
+
+
+
 
 }
 
