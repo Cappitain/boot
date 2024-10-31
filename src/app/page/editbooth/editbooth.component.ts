@@ -37,7 +37,7 @@ export class EditboothComponent {
     };
 
   let jsonString = JSON.stringify(jsonObj);
-  this.http.put(this.data.apiEndpoint + "/admin/zoneUpdate/"+ boothID , jsonString, {
+  this.http.put(this.data.apiEndpoint + "/boothedit/"+ boothID , jsonString, {
     observe: 'response'
   }).subscribe((response) => {
     console.log(response.status);
