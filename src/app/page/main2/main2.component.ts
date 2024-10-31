@@ -30,6 +30,9 @@ export class Main2Component {
   goToInfo() {
     this.router.navigate(['/info']);
   }
+  goToEvent() {
+    this.router.navigate(['/event']);
+  }
   goTomain() {
     this.router.navigate(['']);
   }
