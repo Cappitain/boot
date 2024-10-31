@@ -18,7 +18,6 @@ export const routes: Routes = [
   { path: 'zone2', component: zone2Component },
   { path: 'info', component: InfoComponent },
   { path: 'event', component: EventComponent},
-  
 
 ];
 
