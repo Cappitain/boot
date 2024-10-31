@@ -138,14 +138,14 @@ editbooth() {
   });
 }
 deletebooth(boothID: number) {
+  console.log('Deleting booth with ID:', boothID);
   if (confirm("Are you sure")){
-    this.http.delete(`/admin/delBooth/${boothID}`)
-
-    .subscribe(response => {
-        console.log('Deleted successfully', response);
-    }, error => {
-        console.error('Error deleting Booth', error);
-    });
+    this.http.delete(`http://localhost/webapi/admin/delBooth/${boothID}`)
+        .subscribe(response => {
+            console.log('Deleted successfully', response);
+        }, error => {
+            console.error('Error deleting booth', error);
+        });
   }
 
   
