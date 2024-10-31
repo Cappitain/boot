@@ -5,10 +5,13 @@
 //   const memberInfo = Convert.toMemberInfo(json);
 
 export interface MemberInfo {
+    userID: number;
+    titleName: string;
     firstName: string;
     lastName:  string;
     telephone: string;
     email:     string;
+    password: string;
 }
 
 // Converts JSON strings to/from your types
