@@ -62,6 +62,12 @@
         <mat-menu #menuBOOTH="matMenu">
           <button mat-menu-item (click)="addBooth()">เพิ่มบูธ</button>
           <button mat-menu-item (click)="editbooth()">แก้ไขบูธ</button>
+          <button
+            mat-menu-item
+            (click)="selectedBooth ? deletebooth(selectedBooth.boothID) : null"
+          >
+            ลบบูธ
+          </button>
         </mat-menu>
       </div>
       <button mat-flat-button class="zone-button">จอง</button>
