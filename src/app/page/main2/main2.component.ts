@@ -39,6 +39,7 @@ export class Main2Component {
   goTomain() {
     this.router.navigate(['']);
   }
+
   
   ngOnInit() {
 
