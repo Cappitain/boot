@@ -122,12 +122,13 @@ export class zone2Component {
     // เพิ่มการประมวลผลเพิ่มเติมสำหรับบูธที่เลือกได้ที่นี่
 }
 deletezone(zoneId: number) {
+  if (confirm("Are you sure")){
   this.http.delete(`http://localhost/webapi/admin/delZone/${zoneId}`) // แก้ไขที่นี่
   .subscribe(response => {
       console.log('Deleted successfully', response);
   }, error => {
       console.error('Error deleting zone', error);
-  });
+  });}
 }
 editbooth() {
   this.dataService.selectedBooth =this.selectedBooth;
@@ -136,7 +137,19 @@ editbooth() {
     minWidth:'300px',
   });
 }
+deletebooth(boothID: number) {
+  if (confirm("Are you sure")){
+    this.http.delete(`/admin/delBooth/${boothID}`)
 
+    .subscribe(response => {
+        console.log('Deleted successfully', response);
+    }, error => {
+        console.error('Error deleting Booth', error);
+    });
+  }
+
+  
+}
 
 
 }
