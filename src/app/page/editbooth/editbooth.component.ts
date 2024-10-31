@@ -42,8 +42,11 @@ export class EditboothComponent {
   }).subscribe((response) => {
     console.log(response.status);
     console.log(response.body);
-    this.dialogRef.close();
+    
   });
+  
+  this.dialogRef.close();
+
 }
 
 close(){
