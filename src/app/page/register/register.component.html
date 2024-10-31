@@ -11,37 +11,30 @@
       <div class="login-box">
         <img src="https://scontent.fbkk12-3.fna.fbcdn.net/v/t39.30808-6/309914793_574900577765443_5992899279459763486_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=o_sfWBwptugQ7kNvgGLZ0ev&_nc_zt=23&_nc_ht=scontent.fbkk12-3.fna&_nc_gid=ARcZLhpulQS0DLitknsDXZC&oh=00_AYCkXOK6n84sxU4OBFSu0zdrSBKafHyTPg-qUtKjqrlt4Q&oe=6717226D" alt="KU Logo" class="logo" />
         <h2>สมัครสมาชิก</h2>
-        <div class="options">
-            <span>
-              <input type="radio" name="op" value="male"> นาย
-            </span>
-            <span>
-              <input type="radio" name="op" value="female"> นาง
-            </span>
-            <span>
-              <input type="radio" name="op" value="other"> นางสาว
-            </span>
+        <form [formGroup]="registerForm" (ngSubmit)="addMember()">
+          <div class="input-group">
+            <label for="titleName">คำนำหน้าชื่อ</label>
+            <input type="text" formControlName="titleName" id="titleName" name="titleName" placeholder="คำนำหน้าชื่อ" required/>
           </div>
-        <form>
             <div class="input-group">
-                <label for="name">ชื่อ</label>
-                <input type="text" id="text" placeholder="ชื่อ" required/>
+                <label >ชื่อ</label>
+                <input type="text" formControlName="firstName" placeholder="ชื่อ" required/>
               </div>
             <div class="input-group">
-                <label for="surname">นามสกุล</label>
-                <input type="text" id="surname" placeholder="นามสกุล" required/>
+                <label >นามสกุล</label>
+                <input type="text" formControlName="lastName" placeholder="นามสกุล" required/>
               </div>
               <div class="input-group">
-                <label for="telephone">เบอร์โทรศัพท์</label>
-                <input type="text" id="telephone" placeholder="โทรศัพท์" required/>
+                <label >เบอร์โทรศัพท์</label>
+                <input type="text" formControlName="telephone" placeholder="โทรศัพท์" required/>
               </div>
           <div class="input-group">
-            <label for="email">อีเมล</label>
-            <input type="email" id="email" placeholder="อีเมล" required/>
+            <label >อีเมล</label>
+            <input type="email" formControlName="email" placeholder="อีเมล" required/>
           </div>
           <div class="input-group">
-            <label for="password">รหัสผ่าน</label>
-            <input type="password" id="password" placeholder="รหัสผ่าน" required/>
+            <label >รหัสผ่าน</label>
+            <input type="password" formControlName="password" placeholder="รหัสผ่าน" required/>
           </div>
           <button type="submit" class="login-button" >สมัครสมาชิก</button>
           <div class="additional-options">
