@@ -33,6 +33,8 @@ export class zone2Component {
   selectedZone: Zone | undefined;
   selectedBooth: Booth | undefined;
   filteredBooths: Booth[] = []; 
+  isLoggedInAdmin: boolean = true;
+  isLoggedIn: boolean | undefined;
 
   constructor(private route: ActivatedRoute,private router: Router,private dataService:DataService, private http:HttpClient, private dialog : MatDialog){
     http.get(dataService.apiEndpoint + "/zone").subscribe((data:any)=>{
@@ -48,6 +50,17 @@ export class zone2Component {
 
 
   }
+  
+  ngOnInit() {
+
+    const loggedInStatus = localStorage.getItem('isLoggedInAdmin');
+    this.isLoggedInAdmin = loggedInStatus === 'true'; // แปลงค่าเป็น boolean
+    const email = localStorage.getItem('email');
+    console.log(email);
+
+    
+  }
+
   
   countBoothsInZone(zone: Zone): number {
     return this.booths.filter(booth => booth.zoneID === zone.zoneID).length;
@@ -78,8 +91,10 @@ export class zone2Component {
       this.http.delete(this.dataService.apiEndpoint + "/zone/" + zoneName)
       .subscribe((response) =>{
         console.log(response);
+
       });
     }
+
   } 
   addNew() {
     this.dataService.zones =this.zones;

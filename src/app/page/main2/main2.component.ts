@@ -1,12 +1,14 @@
-import { Component } from '@angular/core';
+import { Component,NO_ERRORS_SCHEMA } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Router } from '@angular/router';
 import { MatMenuModule } from '@angular/material/menu';
+import { CommonModule, NgIf } from '@angular/common';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,MatMenuModule],
+  imports: [RouterOutlet,MatMenuModule,CommonModule,NgIf],
   templateUrl: './main2.component.html',
   styleUrls: ['./main2.component.scss']
 })
@@ -38,6 +40,8 @@ export class Main2Component {
     this.isLoggedInAdmin = loggedInStatus === 'true'; // แปลงค่าเป็น boolean
     const email = localStorage.getItem('email');
     console.log(email);
+
+    
   }
 
   logout() {
@@ -51,4 +55,5 @@ export class Main2Component {
   }, 100);
   alert('Logout Success!!')
 }
+
 }

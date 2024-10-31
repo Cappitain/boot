@@ -31,7 +31,7 @@
         </span>
       </div>
       <div class="navbar-actions">
-        <div>
+        <div *ngIf="isLoggedInAdmin">
           <button
             mat-flat-button
             [matMenuTriggerFor]="menuAdmin"

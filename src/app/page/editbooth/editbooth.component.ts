@@ -46,6 +46,7 @@ export class EditboothComponent {
   });
   
   this.dialogRef.close();
+  
 
 }
 

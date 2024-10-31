@@ -35,6 +35,7 @@ export class EditComponent {
     console.log(response.status);
     console.log(response.body);
     this.dialogRef.close();
+    
   });
 }
 
