@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class DataService {
+  event: any;
   zones: any;
   selectedzones: any;
   booths: any;
