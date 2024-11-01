@@ -70,7 +70,7 @@
           </button>
         </mat-menu>
       </div>
-      <button mat-flat-button class="zone-button">จอง</button>
+      
     </nav>
     <div style="display: flex; flex-direction: row">
       <div style="width: 550px">
@@ -114,13 +114,14 @@
                 <img
                   [src]="booth.boothPicture"
                   alt="boothPicture"
-                  height="150px"
+                  height="100px"
                   width="200px"
                 />
                 รหัส: {{ booth.boothID }} ชื่อบูธ: {{ booth.boothName }} ขนาด:
                 {{ booth.boothSize }} ราคา: {{ booth.boothPrice }} สถานะ:
                 {{ booth.boothStatus }}
               </div>
+              <button style="margin-top: 10px;" mat-flat-button class="zone-button" (click)="goTomain2()">จอง</button>
             </mat-list-option>
           </mat-selection-list>
         </ng-container>
