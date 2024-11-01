@@ -7,6 +7,7 @@ export class DataService {
   event: any;
   zones: any;
   selectedzones: any;
+  selectedevent: any;
   booths: any;
   selectedBooth: any;
   users:any;

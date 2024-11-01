@@ -1,0 +1,23 @@
+<div
+  style="
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    width: 500px;
+    margin: 20px;
+  "
+>
+  <p>เพิ่มข้อมูลการจัดงาน</p>
+
+  <label>ชื่องาน</label>
+  <input type="text" name="eventName" #eventName />
+  <label>วันที่เริ่มงาน</label>
+  <input type="text" name="startDate" #startDate />
+  <label>วันที่จบงาน</label>
+  <input type="text" name="endDate" #endDate />
+  <button (click)="addNew(eventName.value, startDate.value, endDate.value)">
+    Add
+  </button>
+
+  <button (click)="close()">Close</button>
+</div>

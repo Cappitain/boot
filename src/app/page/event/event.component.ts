@@ -9,6 +9,10 @@ import { MatListModule, MatListOption } from '@angular/material/list';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { Convert as eventCvt, Event} from '../../model/event.model';
+import { NeweventComponent } from '../newevent/newevent.component';
+import { MatDialog } from '@angular/material/dialog';
+import { EditeventComponent } from '../editevent/editevent.component';
+
 
 @Component({
   selector: 'app-event',
@@ -23,8 +27,9 @@ export class EventComponent {
   events = Array<Event>();
   selectedZone: Zone | undefined;
   filteredBooths: Booth[] = []; 
+  selectedevent: any;
 
-  constructor(private route: ActivatedRoute,private router: Router,private dataService:DataService, private http:HttpClient){
+  constructor(private route: ActivatedRoute,private router: Router,private dataService:DataService, private http:HttpClient,private dialog : MatDialog){
     http.get(dataService.apiEndpoint + "/eventInfo").subscribe((data:any) =>{
       this.events = eventCvt.toEvent(JSON.stringify(data));
       console.log(this.events)
@@ -70,7 +75,19 @@ export class EventComponent {
   goTomain2() {
     this.router.navigate(['/main2']);
   }
+  addNew() {
+    this.dataService.event =this.events;
+    this.dialog.open(NeweventComponent,{
+      minWidth:'300px',
+    });
+  }
+  edit() {
+    this.dataService.selectedzones =this.selectedZone;
+    this.dataService.zones = this.zones;
+    this.dialog.open(EditeventComponent,{
+      minWidth:'300px',
+    });
 }
-
+}
 
 

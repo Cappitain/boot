@@ -1,0 +1,47 @@
+<div
+  style="
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    width: 500px;
+    margin: 20px;
+  "
+>
+  <p>เพิ่มข้อมูลการจัดงาน</p>
+
+  <label>ชื่องาน</label>
+  <input
+    type="text"
+    name="eventName"
+    #eventName
+    value="{{ selectedevent.eventName }}"
+  />
+  <label>วันที่เริ่มงาน</label>
+  <input
+    type="text"
+    name="startDate"
+    #startDate
+    value="{{ selectedevent.startDate }}"
+  />
+  <label>วันที่จบงาน</label>
+  <input
+    type="text"
+    name="endDate"
+    #endDate
+    value="{{ selectedevent.endDate }}"
+  />
+  <button
+    (click)="
+      save(
+        eventName.value,
+        startDate.value,
+        endDate.value,
+        +selectedevent.eventID
+      )
+    "
+  >
+    Add
+  </button>
+
+  <button (click)="close()">Close</button>
+</div>
