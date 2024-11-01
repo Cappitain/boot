@@ -7,7 +7,7 @@ import { NewboothComponent } from '../newbooth/newbooth.component';
 @Component({
   selector: 'app-newevent',
   standalone: true,
-  imports: [MatDialogModule],
+  imports: [MatDialogModule,NewboothComponent],
   templateUrl: './newevent.component.html',
   styleUrl: './newevent.component.scss'
 })
@@ -28,7 +28,7 @@ export class NeweventComponent {
         endDate: endDate
       };
   
-      this.http.post(this.data.apiEndpoint + "/event", jsonObj, {
+      this.http.post(this.data.apiEndpoint + "/addevent", jsonObj, {
         headers: { 'Content-Type': 'application/json' },
         observe: 'response'
       }).subscribe((response) => {

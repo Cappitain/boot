@@ -82,8 +82,8 @@ export class EventComponent {
     });
   }
   edit() {
-    this.dataService.selectedzones =this.selectedZone;
-    this.dataService.zones = this.zones;
+    this.dataService.selectedevent =this.selectedevent;
+    this.dataService.event = this.events;
     this.dialog.open(EditeventComponent,{
       minWidth:'300px',
     });
