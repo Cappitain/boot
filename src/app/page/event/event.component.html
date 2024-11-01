@@ -28,5 +28,26 @@
         <a>จองบูธงานเกษตรแฟร์</a>
       </span>
     </div>
+    <button (click)="goTomain2()" class="main-button">กลับ</button>
   </nav>
+  <div ><mat-selection-list
+    #zone
+    [multiple]="false"
+    (selectionChange)="show($event.options[0])"
+  >
+    <mat-list-option
+    *ngFor="let event of events"
+      [value]="event"
+      style="width: auto; height: auto"
+    >
+    <div class="zone-card" >
+      <p class="zone_name">ชื่องาน:  {{ event.eventName }}</p>
+      <p class="zone_name">วันที่เริ่มงาน:  {{ event.startDate }}</p>
+      <p class="zone_name">วันที่จบงาน:  {{ event.endDate }}</p>
+      <!-- <button (click)="navi(zone.zoneid)" class="btn">จองโซน {{ zone.zonename }}</button> -->
+  </div>
+    </mat-list-option>
+  </mat-selection-list>
+    
+</div>
 </body>

@@ -8,6 +8,7 @@ import { Convert as boothCvt, Booth } from '../../model/booth.model';
 import { MatListModule, MatListOption } from '@angular/material/list';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
+import { Convert as eventCvt, Event} from '../../model/event.model';
 
 @Component({
   selector: 'app-event',
@@ -24,6 +25,10 @@ export class EventComponent {
   filteredBooths: Booth[] = []; 
 
   constructor(private route: ActivatedRoute,private router: Router,private dataService:DataService, private http:HttpClient){
+    http.get(dataService.apiEndpoint + "/eventInfo").subscribe((data:any) =>{
+      this.events = eventCvt.toEvent(JSON.stringify(data));
+      console.log(this.events)
+    });
     http.get(dataService.apiEndpoint + "/zone").subscribe((data:any)=>{
       this.zones = zoneCvt.toZone(JSON.stringify(data));
       console.log(this.zones);
