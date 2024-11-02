@@ -16,6 +16,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { EditComponent } from '../edit/edit.component';
 import { MatSelectionListChange } from '@angular/material/list';  
 import { EditboothComponent } from '../editbooth/editbooth.component';
+import { BookingComponent } from '../booking/booking.component';
 
 
 @Component({
@@ -35,7 +36,7 @@ export class zone2Component {
   filteredBooths: Booth[] = []; 
   isLoggedInAdmin: boolean = true;
   isLoggedIn: boolean | undefined;
-
+  
   constructor(private route: ActivatedRoute,private router: Router,private dataService:DataService, private http:HttpClient, private dialog : MatDialog){
     http.get(dataService.apiEndpoint + "/zone").subscribe((data:any)=>{
       this.zones = zoneCvt.toZone(JSON.stringify(data));
@@ -102,6 +103,14 @@ export class zone2Component {
       minWidth:'300px',
     });
   }
+
+  booking() {
+    this.dataService.booths =this.booths;
+    this.dialog.open(BookingComponent,{
+      minWidth:'300px',
+    });
+  }
+
   edit() {
     this.dataService.selectedzones =this.selectedZone;
     this.dataService.zones = this.zones;
@@ -149,6 +158,30 @@ deletebooth(boothID: number) {
   }
 
   
+}
+setParam(booth :any){
+  localStorage.setItem('boothID',booth.boothID)
+  localStorage.setItem('boothName',booth.boothName)
+  localStorage.setItem('boothSize',booth.boothSize)
+  localStorage.setItem('boothStatus',booth.boothStatus)
+  localStorage.setItem('boothPrice',booth.boothPrice)
+  localStorage.setItem('Product',booth.product)
+  const boothID = localStorage.getItem('boothID')
+  const boothName = localStorage.getItem('boothName')
+  const boothSize = localStorage.getItem('boothSize')
+  const boothStatus = localStorage.getItem('boothStatus')
+  const boothPrice = localStorage.getItem('boothPrice')
+  const Product = localStorage.getItem('Product')
+  let string ={
+    boothID,
+    boothName,
+    boothSize,
+    boothStatus,
+    boothPrice,
+    Product
+  }
+  let jsonString = JSON.stringify(string)
+  console.log(jsonString)
 }
 
 

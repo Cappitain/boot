@@ -1,0 +1,24 @@
+<div style="display: flex; flex-direction: column; height: 380px; width: 500px; margin: 20px;">
+    <p>เพิ่มบูธใหม่</p>
+  
+    <label>ชื่อบูธ</label>
+    <input type="text" [(ngModel)]="boothName" />
+  
+    <label>ขนาดบูธ (กว้าง x ยาว) ตารางเมตร</label>
+    <input type="text" [(ngModel)]="boothSize" />
+  
+    <label>สถานะ</label>
+    <input type="text" [(ngModel)]="boothStatus" />
+  
+    <label>ราคาบูธ</label>
+    <input type="text" [(ngModel)]="boothPrice" />
+  
+    <label>สินค้าที่ขาย</label>
+    <input type="text" [(ngModel)]="Product" />
+  
+    <label>ID ของบูธ</label>
+    <input type="text" [(ngModel)]="boothID" disabled />
+  
+    <button (click)="onUpdateStatus(booths);insertBook(booths)">เพิ่มข้อมูลบูธ</button>
+    <button (click)="close()">close</button>
+  </div>

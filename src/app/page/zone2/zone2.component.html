@@ -109,6 +109,7 @@
               *ngFor="let booth of filteredBooths"
               [value]="booth"
               style="width: 850px; height: 160px"
+              (click) = "setParam(booth)"
             >
               <div>
                 <img
@@ -121,7 +122,7 @@
                 {{ booth.boothSize }} ราคา: {{ booth.boothPrice }} สถานะ:
                 {{ booth.boothStatus }}
               </div>
-              <button style="margin-top: 10px;" mat-flat-button class="zone-button" (click)="goTomain2()">จอง</button>
+              <button style="margin-top: 10px;" mat-flat-button class="zone-button" (click)="booking()">จอง</button>
             </mat-list-option>
           </mat-selection-list>
         </ng-container>

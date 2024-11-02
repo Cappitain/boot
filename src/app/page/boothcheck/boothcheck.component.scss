@@ -1,0 +1,196 @@
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f0f8ff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+  }
+  
+  .navbar-brand span {
+    font-family: "Mitr", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5rem;
+    color: #006400;
+  }
+  
+  .navbar-links {
+    font-family: "Mitr", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5rem;
+    color: #006400;
+  }
+  
+  .zone-link {
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .zone-a {
+    color: #004aad;
+    font-family: "Black Ops One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .zone-b {
+    color: #ceaa4b;
+    font-family: "Black Ops One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .zone-c {
+    color: #3aa79c;
+    font-family: "Black Ops One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .zone-d {
+    color: #d52d2e;
+    font-family: "Black Ops One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .navbar-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .login-button, .signup-button, .zone-button, .info-button {
+    font-family: "Mitr", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    padding: 8px 16px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .zone_id{
+    margin-top: 10px;
+}
+  
+  .zone-card {
+    margin-top: 3px;
+    padding: 2%;
+    border-radius: 5px;
+    box-shadow: #091e4240 0 1px 1px, #091e4221 0 0 1px 1px;
+    line-height: 15px;
+    }
+  
+  .login-button {
+    font-family: "Mitr", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .signup-button {
+    background-color: #ff4500;
+    color: white;
+  }
+
+  .zone-button {
+    font-family: "Mitr", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    background-color: #0f8bff;
+    color: white;
+  }
+  .info-button {
+    font-family: "Mitr", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    background-color: #0f8bff;
+    color: white;
+  }
+  .main-button {
+    font-family: "Mitr", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    background-color: #ff0f4b;
+    color: white;
+    padding: 8px 16px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Map Section Styles */
+  .map-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .map-image {
+    width: 100%;
+    max-width: 800px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+  }
+  
+  .mitr-extralight {
+    font-family: "Mitr", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+  }
+  
+  .mitr-light {
+    font-family: "Mitr", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .mitr-regular {
+    font-family: "Mitr", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .mitr-medium {
+    font-family: "Mitr", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .mitr-semibold {
+    font-family: "Mitr", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  .mitr-bold {
+    font-family: "Mitr", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .black-ops-one-regular {
+    font-family: "Black Ops One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  area{
+    cursor: pointer;
+  }

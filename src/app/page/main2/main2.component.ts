@@ -39,6 +39,18 @@ export class Main2Component {
   goTomain() {
     this.router.navigate(['']);
   }
+  goTobookst() {
+    this.router.navigate(['/bookst']);
+  }
+  goTobookst1() {
+    this.router.navigate(['/bookst1']);
+  }
+  goTobtck() {
+    this.router.navigate(['/boothck']);
+  }
+  goTobtck1() {
+    this.router.navigate(['/boothck1']);
+  }
 
   
   ngOnInit() {

@@ -9,6 +9,12 @@ import { zone2Component } from './page/zone2/zone2.component';
 import { InfoComponent } from './page/info/info.component';
 import { EventComponent } from './page/event/event.component';
 import { AllmemberComponent } from './page/allmember/allmember.component';
+import { BookingComponent } from './page/booking/booking.component';
+import { BookstComponent } from './page/bookst/bookst.component';
+import { Bookst1Component } from './page/bookst1/bookst1.component';
+import { BoothcheckComponent } from './page/boothcheck/boothcheck.component';
+import { Boothcheck1Component } from './page/boothcheck1/boothcheck1.component';
+
 
 export const routes: Routes = [
   { path: '', component: MainComponent},
@@ -20,6 +26,11 @@ export const routes: Routes = [
   { path: 'info', component: InfoComponent },
   { path: 'event', component: EventComponent},
   { path: 'member', component: AllmemberComponent},
+  { path: 'book', component: BookingComponent},
+  { path: 'bookst', component: BookstComponent},
+  { path: 'bookst1', component: Bookst1Component},
+  { path: 'boothck', component: BoothcheckComponent},
+  { path: 'boothck1', component: Boothcheck1Component}
 
 ];
 

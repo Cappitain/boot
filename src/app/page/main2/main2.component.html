@@ -41,14 +41,20 @@
           </button>
           <mat-menu #menuAdmin="matMenu">
             <button mat-menu-item (click)="goToEvent()">ข้อมูลการจัดงาน</button>
-            <button mat-menu-item>
-              อนุมัติการจอง,ผู้ที่ยังไม่ชำระเงิน,ผู้ที่ชำระเงินแล้ว
+            <button mat-menu-item (click)="goTobookst()">
+              ผู้ที่ยังไม่ชำระเงิน
+            </button>
+            <button mat-menu-item (click)="goTobookst1()">
+              ผู้ที่ชำระเงินแล้ว
             </button>
             <button mat-menu-item (click)="goToMember()">
               ดูรายชื่อสมาชิก
             </button>
-            <button mat-menu-item>
-              อยู่ระหว่างตรวจสอบ,รายละเอียดบูธที่ถูกจอง
+            <button mat-menu-item  (click)=" goTobtck()">
+             บูธที่อยู่ระหว่างตรวจสอบ
+            </button>
+            <button mat-menu-item (click)=" goTobtck1()">
+               บูธที่ถูกจอง
             </button>
           </mat-menu>
         </div>
