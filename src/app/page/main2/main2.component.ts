@@ -3,6 +3,9 @@ import { RouterOutlet } from '@angular/router';
 import { Router } from '@angular/router';
 import { MatMenuModule } from '@angular/material/menu';
 import { CommonModule, NgIf } from '@angular/common';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { DataService } from '../../service/data.service';
+import { MatDialog } from '@angular/material/dialog';
 
 
 @Component({
@@ -15,9 +18,10 @@ import { CommonModule, NgIf } from '@angular/common';
 export class Main2Component { 
   title = 'boots';
   isLoggedInAdmin: boolean = true;
+  user: any={};
   isLoggedIn: boolean | undefined;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router,private dataService:DataService, private http:HttpClient, private dialog : MatDialog) {}
   goToLogin() {
     this.router.navigate(['/login']);
   }
@@ -59,6 +63,9 @@ export class Main2Component {
     this.isLoggedInAdmin = loggedInStatus === 'true'; // แปลงค่าเป็น boolean
     const email = localStorage.getItem('email');
     console.log(email);
+    this.getUserInfo()
+    const userID = localStorage.getItem('userID');
+    console.log(userID)
 
     
   }
@@ -74,5 +81,51 @@ export class Main2Component {
   }, 100);
   alert('Logout Success!!')
 }
+getUserInfo(): void {
+  const email = localStorage.getItem('email'); // ดึงอีเมลจาก local 
+  console.log(email)    // const apiEndpoint = 'https://wtg11.bowlab.net/webapi_finalpro/users/getUserByEmail';
+  const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+  const jEmail = {email};
+  const apiEndpoint='http://localhost/webapi/users/getUserByEmail';
+  let jsonString = JSON.stringify(email);
+  this.http.post<ApiResponse>(apiEndpoint, jEmail, { headers: headers,
+    observe:'response'}).subscribe((response) =>{
+      console.log(typeof email);
+      console.log( email);
+      console.log(JSON.stringify(response.status));
+      console.log(JSON.stringify(response.body));
+      const body = response.body;
+      if (body && body.status === 'success' && body.userInfo) {  // ตรวจสอบว่า body ไม่ใช่ null และ userInfo มีอยู่
+        const userInfoArray = body.userInfo;
+        if (userInfoArray.length > 0) {
+          this.user = userInfoArray[0]; // เก็บข้อมูลผู้ใช้ในตัวแปร user
+          localStorage.setItem('userID', this.user.userID);
+          const userid = localStorage.getItem('userID');
+          console.log(userid);
+        } else {
+          console.error('User information not found');
+          alert('ไม่พบข้อมูลผู้ใช้');
+        }
+      } else {
+        console.error('Error fetching user info:', body?.message);
+        alert('ไม่สามารถดึงข้อมูลผู้ใช้ได้');
+      }
 
+    })
+}
+}
+export interface ApiResponse {
+  status: string;
+  userInfo: user[];
+  message?: string;  // message อาจจะมีหรือไม่มีก็ได้
+}
+
+export interface user {
+  userID: string;
+  titleName: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  telephone: string;
+  password: string;
 }

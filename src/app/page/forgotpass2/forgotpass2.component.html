@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <title>เข้าสู่ระบบ</title>
+    <style>
+      .card {
+        margin-top: 100px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .card-header {
+        background-color: #007bff;
+        color: white;
+        text-align: center;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+      }
+      .form-group label {
+        font-weight: bold;
+      }
+      .forgot-password {
+        margin-top: 10px;
+      }
+      .forgot-password a {
+        color: #007bff;
+        text-decoration: none;
+        font-size: 0.9em;
+      }
+      .forgot-password a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <h2 class="text-center">ResetPassword</h2>
+        <div class="card-body">
+          <form (ngSubmit)="updatePass(password.value)">
+            <div class="form-group">
+              <label for="email">NewPassword</label>
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                name="password"
+                #password
+                required
+              />
+            </div>
+            <button
+              type="button"
+              class="btn btn-primary btn-block"
+              (click)="updatePass(password.value)"
+            >
+              ยืนยันการแก้ไขรหัสผ่าน
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -14,7 +14,8 @@ import { BookstComponent } from './page/bookst/bookst.component';
 import { Bookst1Component } from './page/bookst1/bookst1.component';
 import { BoothcheckComponent } from './page/boothcheck/boothcheck.component';
 import { Boothcheck1Component } from './page/boothcheck1/boothcheck1.component';
-
+import { ForgotpassComponent } from './page/forgotpass/forgotpass.component';
+import { Forgotpass2Component } from './page/forgotpass2/forgotpass2.component';
 
 export const routes: Routes = [
   { path: '', component: MainComponent},
@@ -30,7 +31,9 @@ export const routes: Routes = [
   { path: 'bookst', component: BookstComponent},
   { path: 'bookst1', component: Bookst1Component},
   { path: 'boothck', component: BoothcheckComponent},
-  { path: 'boothck1', component: Boothcheck1Component}
+  { path: 'boothck1', component: Boothcheck1Component},
+  { path: 'forgot', component: ForgotpassComponent},
+  { path: 'forgot1', component: Forgotpass2Component}
 
 ];
 

@@ -1,24 +1,74 @@
-<div style="display: flex; flex-direction: column; height: 380px; width: 500px; margin: 20px;">
-    <p>เพิ่มบูธใหม่</p>
-  
-    <label>ชื่อบูธ</label>
-    <input type="text" [(ngModel)]="boothName" />
-  
-    <label>ขนาดบูธ (กว้าง x ยาว) ตารางเมตร</label>
-    <input type="text" [(ngModel)]="boothSize" />
-  
-    <label>สถานะ</label>
-    <input type="text" [(ngModel)]="boothStatus" />
-  
-    <label>ราคาบูธ</label>
-    <input type="text" [(ngModel)]="boothPrice" />
-  
-    <label>สินค้าที่ขาย</label>
-    <input type="text" [(ngModel)]="Product" />
-  
-    <label>ID ของบูธ</label>
-    <input type="text" [(ngModel)]="boothID" disabled />
-  
-    <button (click)="onUpdateStatus(booths);insertBook(booths)">เพิ่มข้อมูลบูธ</button>
-    <button (click)="close()">close</button>
-  </div>
+<div
+  style="
+    display: flex;
+    flex-direction: column;
+    height: 380px;
+    width: 500px;
+    margin: 20px;
+  "
+>
+  <p>จอง</p>
+
+  <label>ชื่อบูธ</label>
+  <input
+    type="text"
+    name="boothName"
+    #boothName
+    [value]="selectedBooth.boothName"
+  />
+
+  <label>ขนาดบูธ(กว้าง x ยาว)ตารางเมตร</label>
+  <input
+    type="text"
+    name="boothSize"
+    #boothSize
+    [value]="selectedBooth.boothSize"
+  />
+  <label>สถานะ</label>
+  <input
+    type="text"
+    name="boothStatus"
+    #boothStatus
+    value="{{ selectedBooth.boothStatus }}"
+  />
+
+  <label>ราคาบูธ</label>
+  <input
+    type="text"
+    name="boothPrice"
+    #boothPrice
+    [value]="selectedBooth.boothPrice"
+  />
+
+  <label>รูปภาพบูธ</label>
+  <input
+    type="text"
+    name="boothPicture"
+    #boothPicture
+    [value]="selectedBooth.boothPicture"
+  />
+
+  <label>สินค้าที่ขาย</label>
+  <input type="text" name="product" #product [value]="selectedBooth.product" />
+
+  <label>ID ของบูธ</label>
+  <input type="text" name="boothID" #boothID [value]="selectedBooth.boothID" />
+
+  <button
+    (click)="
+      save(
+        boothName.value,
+        boothSize.value,
+        boothStatus.value,
+        boothPrice.value,
+        boothPicture.value,
+        product.value,
+        +selectedBooth.boothID
+      )
+    "
+  >
+    เพิ่มข้อมูลบูธ
+  </button>
+
+  <button (click)="close()">close</button>
+</div>

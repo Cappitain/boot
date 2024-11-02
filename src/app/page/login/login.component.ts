@@ -63,6 +63,9 @@ export class LoginComponent {
   goTomain() {
     this.router.navigate(['']);
   }
+  goToforgot() {
+    this.router.navigate(['forgot']);
+  }
   goToRegister() {
     this.router.navigate(['/regis']);
   }
