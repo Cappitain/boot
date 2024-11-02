@@ -88,6 +88,16 @@ export class EventComponent {
       minWidth:'300px',
     });
 }
+deleteEvent(eventID: number) {
+  console.log('Selected Event:', this.selectedevent);
+  if (this.selectedevent) {
+  this.http.delete(`http://localhost/webapi/admin/delEvent/${eventID}`) // แก้ไขที่นี่
+  .subscribe(response => {
+
+  });} else {
+    console.error("No event selected for deletion.");
+}
+}
 }
 
 

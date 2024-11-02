@@ -30,7 +30,10 @@
     </div>
     <button (click)="addNew()" class="zone-button">เพิ่มข้อมูลการจัดงาน</button>
     <button (click)="edit()" class="zone-button">แก้ไข</button>
-    <button (click)="goTomain2()" class="zone-button">ลบ</button>
+    <button (click)="deleteEvent(selectedevent?.eventID)" class="zone-button">
+      ลบ
+    </button>
+
     <button (click)="goTomain2()" class="main-button">กลับ</button>
   </nav>
   <div>
