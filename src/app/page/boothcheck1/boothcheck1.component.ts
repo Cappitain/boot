@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
 import { Convert as userCvt, MemberInfo } from '../../model/user.model';
 import { MatDialogModule, MatDialog} from '@angular/material/dialog';
 import { Convert as boothCvt, Booth } from '../../model/booth.model';
+import { Convert as boothcheckCvt, Boothcheck } from '../../model/boothcheck.model';
 
 @Component({
   selector: 'app-boothcheck1',
@@ -17,11 +18,14 @@ import { Convert as boothCvt, Booth } from '../../model/booth.model';
   styleUrl: './boothcheck1.component.scss'
 })
 export class Boothcheck1Component {
-  booths = Array<Booth>();
+  boothchecks = Array<Boothcheck>();
+  selectedboothchecks = Array<Boothcheck>();
+  users = Array<MemberInfo>();booths = Array<Booth>();
+  selectedBoothcheck : any;
   constructor(private router: Router, private dataService:DataService, private http:HttpClient
     ,private dialog:MatDialog) {http.get(dataService.apiEndpoint + "/boothcheck1").subscribe((data:any) =>{
-      this.booths = boothCvt.toBooth(JSON.stringify(data));
-      this.booths = boothCvt.toBooth(JSON.stringify(data));
+      this.boothchecks = boothcheckCvt.toBoothcheck(JSON.stringify(data));
+      this.boothchecks = boothcheckCvt.toBoothcheck(JSON.stringify(data));
       console.log(this.booths)
     });}
   goTomain2() {

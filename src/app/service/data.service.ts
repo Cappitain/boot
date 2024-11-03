@@ -12,6 +12,6 @@ export class DataService {
   selectedBooth: any;
   users:any;
   apiEndpoint = 'http://localhost/webapi'
-
+   // apiEndpoint = 'https://wtg15.bowlab.net/webapi'
   constructor() { }
 }

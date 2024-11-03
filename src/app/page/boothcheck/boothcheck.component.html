@@ -34,13 +34,15 @@
         <button (click)="goTomain2()" class="main-button">กลับ</button>
     </nav>
     <div >
-        <div class="zone-card" *ngFor="let booth of booths">
-            <p class="zone_name">ชื่อ:  {{ booth.boothName }}</p>
-            <p class="zone_name">ขนาด:  {{ booth.boothSize }}</p>
-            <p class="zone_name">สถานะ:  {{ booth.boothStatus }}</p>
-            <p class="zone_name">ราคา:  {{ booth.boothPrice }}</p>
-            <p class="zone_name">รูปภาพ:  {{ booth.boothPicture }}</p>
-            <p class="zone_name">สินค้าที่ขาย:  {{ booth.product }}</p>
+        <div class="zone-card" *ngFor="let boothchecks of this.boothchecks">
+            <p class="zone_name">ชื่อ:  {{ boothchecks.firstName }}</p>
+            <p class="zone_name">นามสกุล:  {{ boothchecks.lastName }}</p>
+            <p class="zone_name">เบอร์:  {{ boothchecks.telephone }}</p>
+            <p class="zone_name">ชื่อบูธ:  {{ boothchecks.boothName }}</p>
+            <p class="zone_name">สถานะ:  {{ boothchecks.boothStatus }}</p>
+            <p class="zone_name">ชื่อโซน:  {{ boothchecks.zoneName }}</p>
+
             <!-- <button (click)="navi(zone.zoneid)" class="btn">จองโซน {{ zone.zonename }}</button> -->
         </div>
     </div>
+

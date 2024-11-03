@@ -43,16 +43,17 @@ export class EventComponent {
       this.booths = boothCvt.toBooth(JSON.stringify(data));
       console.log(this.booths);
     });
-
-
-
-
-
   }
   countBoothsInZone(zone: Zone): number {
     return this.booths.filter(booth => booth.zoneID === zone.zoneID).length;
   }
-
+  selectEvent(event: Event) {
+  this.selectedevent = event;
+  console.log('Event selected:', this.selectedevent); 
+  localStorage.setItem('eventID',this.selectedevent.eventID)
+  const eventid =  localStorage.getItem('eventID')
+  console.log(eventid); 
+  }
   show(option: MatListOption) {
     this.selectedZone = option.value;
     // กรองบูธที่อยู่ในโซนที่เลือก
@@ -76,6 +77,7 @@ export class EventComponent {
     this.router.navigate(['/main2']);
   }
   addNew() {
+    console.log('Selected Event:', this.selectedevent);
     this.dataService.event =this.events;
     this.dialog.open(NeweventComponent,{
       minWidth:'300px',
@@ -88,16 +90,25 @@ export class EventComponent {
       minWidth:'300px',
     });
 }
-deleteEvent(eventID: number) {
-  console.log('Selected Event:', this.selectedevent);
-  if (this.selectedevent) {
-  this.http.delete(`http://localhost/webapi/admin/delEvent/${eventID}`) // แก้ไขที่นี่
-  .subscribe(response => {
+delete(eventID: number ){
+  if (confirm("ยืนยันการลบโซนนี้ ?")){
+    this.http.delete(this.dataService.apiEndpoint + "/zone/" + eventID)
+    .subscribe((response) =>{
+      console.log(response);
 
-  });} else {
-    console.error("No event selected for deletion.");
+    });
+  }
+
+} 
+deleteEvent(eventID :string) {
+  const vars = localStorage.getItem('eventID')
+  console.log(vars)
+  console.log('Selected Event:', this.selectedevent.evenID);
+  if (this.selectedevent && eventID) {
+    this.http.delete(`http://localhost/webapi/admin/delEvent/${eventID}`)
+      .subscribe(response => {
+        console.log('Event deleted successfully', response);
+      });
+  }
 }
 }
-}
-
-

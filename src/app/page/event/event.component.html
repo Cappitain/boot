@@ -30,7 +30,7 @@
     </div>
     <button (click)="addNew()" class="zone-button">เพิ่มข้อมูลการจัดงาน</button>
     <button (click)="edit()" class="zone-button">แก้ไข</button>
-    <button (click)="deleteEvent(selectedevent?.eventID)" class="zone-button">
+    <button (click)="deleteEvent(selectedevent.evenID)" class="zone-button">
       ลบ
     </button>
 
@@ -48,7 +48,10 @@
         style="width: auto; height: auto"
       >
         <div class="zone-card">
-          <p class="zone_name">ชื่องาน: {{ event.eventName }}</p>
+          <p (click)="selectEvent(event)">
+             ชื่องาน: {{ event.eventName }}
+          </p>
+
           <p class="zone_name">วันที่เริ่มงาน: {{ event.startDate }}</p>
           <p class="zone_name">วันที่จบงาน: {{ event.endDate }}</p>
           <!-- <button (click)="navi(zone.zoneid)" class="btn">จองโซน {{ zone.zonename }}</button> -->
